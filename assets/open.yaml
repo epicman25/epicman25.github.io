@@ -1,0 +1,715 @@
+---
+openapi: 3.0.2
+info:
+  title: Video-Sur-System
+  version: 0.1.0
+paths:
+  "/api/user/create_user":
+    post:
+      tags:
+      - user
+      summary: Create User
+      operationId: create_user_api_user_create_user_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/User"
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User"
+        '404':
+          description: Welcomet to Admin Panel
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+  "/api/user/get_user/{uid}":
+    get:
+      tags:
+      - user
+      summary: Get User
+      operationId: get_user_api_user_get_user__uid__get
+      parameters:
+      - required: true
+        schema:
+          title: Uid
+          type: string
+        name: uid
+        in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User"
+        '404':
+          description: Welcomet to Admin Panel
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+  "/api/user/login_user":
+    post:
+      tags:
+      - user
+      summary: Login User
+      operationId: login_user_api_user_login_user_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/login"
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '404':
+          description: Welcomet to Admin Panel
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+  "/api/user/update_user/{uid}":
+    put:
+      tags:
+      - user
+      summary: Update User
+      operationId: update_user_api_user_update_user__uid__put
+      parameters:
+      - required: true
+        schema:
+          title: Uid
+          type: string
+        name: uid
+        in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/User"
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User"
+        '404':
+          description: Welcomet to Admin Panel
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+  "/api/user/reset_password/":
+    post:
+      tags:
+      - user
+      summary: Reset Password
+      operationId: reset_password_api_user_reset_password__post
+      parameters:
+      - required: true
+        schema:
+          title: Email
+          type: string
+        name: email
+        in: query
+      - required: true
+        schema:
+          title: Password
+          type: string
+        name: password
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '404':
+          description: Welcomet to Admin Panel
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+  "/api/user/get_all_users":
+    get:
+      tags:
+      - user
+      summary: Get All Users
+      operationId: get_all_users_api_user_get_all_users_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '404':
+          description: Welcomet to Admin Panel
+  "/api/user/get_userid_by_email/{email}":
+    get:
+      tags:
+      - user
+      summary: Get Userid By Email
+      operationId: get_userid_by_email_api_user_get_userid_by_email__email__get
+      parameters:
+      - required: true
+        schema:
+          title: Email
+          type: string
+        name: email
+        in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '404':
+          description: Welcomet to Admin Panel
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+  "/api/original_video/upload_video":
+    post:
+      tags:
+      - original_video
+      summary: Upload Video
+      operationId: upload_video_api_original_video_upload_video_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/VideoOriginal"
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/VideoOriginal"
+        '404':
+          description: Welcomet to Admin Panel
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+  "/api/original_video/get_video/{uid}":
+    get:
+      tags:
+      - original_video
+      summary: Get Video
+      operationId: get_video_api_original_video_get_video__uid__get
+      parameters:
+      - required: true
+        schema:
+          title: Uid
+          type: string
+        name: uid
+        in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/VideoOriginal"
+        '404':
+          description: Welcomet to Admin Panel
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+  "/api/original_video/get_all_videos":
+    get:
+      tags:
+      - original_video
+      summary: Get All Videos
+      operationId: get_all_videos_api_original_video_get_all_videos_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '404':
+          description: Welcomet to Admin Panel
+  "/api/original_video/get_all_videos_by_user/{uid}":
+    get:
+      tags:
+      - original_video
+      summary: Get All Videos By User
+      operationId: get_all_videos_by_user_api_original_video_get_all_videos_by_user__uid__get
+      parameters:
+      - required: true
+        schema:
+          title: Uid
+          type: string
+        name: uid
+        in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '404':
+          description: Welcomet to Admin Panel
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+  "/api/cropped_video/upload_cropped_video":
+    post:
+      tags:
+      - cropped_video
+      summary: Upload Cropped Video
+      operationId: upload_cropped_video_api_cropped_video_upload_cropped_video_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/CroppedVideo"
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/CroppedVideo"
+        '404':
+          description: Welcomet to Admin Panel
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+  "/api/cropped_video/get_cropped_video/{uid}":
+    get:
+      tags:
+      - cropped_video
+      summary: Get Cropped Video
+      operationId: get_cropped_video_api_cropped_video_get_cropped_video__uid__get
+      parameters:
+      - required: true
+        schema:
+          title: Uid
+          type: string
+        name: uid
+        in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/CroppedVideo"
+        '404':
+          description: Welcomet to Admin Panel
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+  "/api/cropped_video/get_all_cropped_videos":
+    get:
+      tags:
+      - cropped_video
+      summary: Get All Cropped Videos
+      operationId: get_all_cropped_videos_api_cropped_video_get_all_cropped_videos_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '404':
+          description: Welcomet to Admin Panel
+  "/api/cropped_video/get_all_cropped_videos_by_user/{uid}":
+    get:
+      tags:
+      - cropped_video
+      summary: Get All Cropped Videos By User
+      operationId: get_all_cropped_videos_by_user_api_cropped_video_get_all_cropped_videos_by_user__uid__get
+      parameters:
+      - required: true
+        schema:
+          title: Uid
+          type: string
+        name: uid
+        in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '404':
+          description: Welcomet to Admin Panel
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+  "/api/access/create_access":
+    post:
+      tags:
+      - access
+      summary: Upload Access
+      operationId: upload_access_api_access_create_access_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/Access"
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '404':
+          description: Welcomet to Admin Panel
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+  "/api/access/update_access_by_unique_id/{uid}":
+    put:
+      tags:
+      - access
+      summary: Update Access
+      operationId: update_access_api_access_update_access_by_unique_id__uid__put
+      parameters:
+      - required: true
+        schema:
+          title: Uid
+          type: string
+        name: uid
+        in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/Access"
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '404':
+          description: Welcomet to Admin Panel
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+  "/api/access/update_access_by_email/{email}":
+    put:
+      tags:
+      - access
+      summary: Update Access
+      operationId: update_access_api_access_update_access_by_email__email__put
+      parameters:
+      - required: true
+        schema:
+          title: Email
+          type: string
+        name: email
+        in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/Access"
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '404':
+          description: Welcomet to Admin Panel
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+  "/api/access/get_access_by_unique_id/{uid}":
+    get:
+      tags:
+      - access
+      summary: Get Access
+      operationId: get_access_api_access_get_access_by_unique_id__uid__get
+      parameters:
+      - required: true
+        schema:
+          title: Uid
+          type: string
+        name: uid
+        in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '404':
+          description: Welcomet to Admin Panel
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+  "/api/access/get_access_by_email/{email}":
+    get:
+      tags:
+      - access
+      summary: Get Access By Email
+      operationId: get_access_by_email_api_access_get_access_by_email__email__get
+      parameters:
+      - required: true
+        schema:
+          title: Email
+          type: string
+        name: email
+        in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '404':
+          description: Welcomet to Admin Panel
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+  "/api/access/get_all_access":
+    get:
+      tags:
+      - access
+      summary: Get All Access
+      operationId: get_all_access_api_access_get_all_access_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '404':
+          description: Welcomet to Admin Panel
+components:
+  schemas:
+    Access:
+      title: Access
+      required:
+      - unique_id
+      - main_user
+      - sub_users
+      type: object
+      properties:
+        unique_id:
+          title: Unique Id
+          type: string
+        main_user:
+          title: Main User
+          type: string
+        sub_users:
+          title: Sub Users
+          type: array
+          items: {}
+    CroppedVideo:
+      title: CroppedVideo
+      required:
+      - unique_id
+      - video_url
+      - video_name
+      - date_of_event
+      - type_of_event
+      - event_location
+      - uploaded_by
+      type: object
+      properties:
+        unique_id:
+          title: Unique Id
+          type: string
+        video_url:
+          title: Video Url
+          type: string
+        video_name:
+          title: Video Name
+          type: string
+        date_of_event:
+          title: Date Of Event
+          type: string
+        type_of_event:
+          title: Type Of Event
+          type: string
+        event_location:
+          title: Event Location
+          type: string
+        uploaded_by:
+          title: Uploaded By
+          type: string
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            "$ref": "#/components/schemas/ValidationError"
+    User:
+      title: User
+      required:
+      - unique_id
+      - email
+      - password
+      - device1
+      - device2
+      type: object
+      properties:
+        unique_id:
+          title: Unique Id
+          type: string
+        email:
+          title: Email
+          type: string
+          format: email
+        password:
+          title: Password
+          type: string
+        device1:
+          title: Device1
+          type: string
+        device2:
+          title: Device2
+          type: string
+        share_perm:
+          title: Share Perm
+          type: boolean
+          default: false
+        upload_perm:
+          title: Upload Perm
+          type: boolean
+          default: false
+        access_level:
+          title: Access Level
+          type: integer
+          default: 2
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+    VideoOriginal:
+      title: VideoOriginal
+      required:
+      - unique_id
+      - video_url
+      - video_name
+      - date_of_event
+      - type_of_event
+      - event_location
+      - uploaded_by
+      type: object
+      properties:
+        unique_id:
+          title: Unique Id
+          type: string
+        video_url:
+          title: Video Url
+          type: string
+        video_name:
+          title: Video Name
+          type: string
+        date_of_event:
+          title: Date Of Event
+          type: string
+        type_of_event:
+          title: Type Of Event
+          type: string
+        event_location:
+          title: Event Location
+          type: string
+        uploaded_by:
+          title: Uploaded By
+          type: string
+    login:
+      title: login
+      required:
+      - email
+      - password
+      type: object
+      properties:
+        email:
+          title: Email
+          type: string
+          format: email
+        password:
+          title: Password
+          type: string
