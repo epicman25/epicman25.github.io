@@ -1,664 +1,452 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Project</title>
-  <meta name="keywords" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.">
-  <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.">
-
-  <link rel="stylesheet" href="assets/fonts/flat-icon/flaticon.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-<div id="content-wrapper">
-  <header class="header header--bg">
-    <div class="container">
-      <nav class="navbar">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span> 
-          </button>
-          <a class="navbar-brand" href="#">OBELA</a>
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta content="text/html" charset="UTF-8" http-equiv="Content-Type" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Personal site of Tejeshwar Reddy, epicman25's Space." />
+        <title>Epicman25's Space</title>
+        <link rel="icon" href="images/favicon.ico" type="image/png" />
+        <!-- For Performance Improvements -->
+        <link
+            crossorigin
+            rel="preload"
+            href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap"
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+            integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.11.0/devicon.min.css"
+            integrity="sha512-QVvV1k8iL0nu9XAzMIR11N8swkeXyG5nKSnV595s+OVjI4JM8JLRlWfaDZ8bGBGAF/K945Hux9QRIctNkUKNcQ=="
+            crossorigin="anonymous"
+        />
+        <link
+            rel="preload"
+            href="styles/bootstrap.min.css"
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+        <link href="styles/styles.css" rel="stylesheet" />
+        <script src="scripts/projects.js" defer></script>
+        <noscript>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" />
+            <link
+                crossorigin="anonymous"
+                integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+            />
+            <link
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.14.0/devicon-base.min.css"
+                integrity="sha512-QBmAN0VX1lfrhdUcl92KLv3Rxm2NJmAWsGrQd6vnfXExmMLq6MTCmBzeKRqvQ8HczAW3VkUHE5/WKhKObmXTbw=="
+                crossorigin="anonymous"
+                referrerpolicy="no-referrer"
+            />
+            <link href="styles/bootstrap.min.cs" rel="stylesheet" />
+        </noscript>
+    </head>
+    <body>
+        <div id="mobile-menu-open" class="shadow-large">
+            <i class="fa fa-bars" aria-hidden="true"></i>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav">
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">ABOUT</a></li>
-            <li><a href="#">SKILL</a></li> 
-            <li><a href="#">PORTFOLIO</a></li> 
-            <li><a href="#">TEAM</a></li> 
-            <li><a href="#">BLOG</a></li> 
-            <li><a href="#">CONTACT</a></li> 
-          </ul>
-        </div>
-      </nav>
-      <div class="header__content text-center">
-        <span class="header__content__block">HELLO</span>
-        <h1 class="header__content__title">I'M JOHNNY D. DORSCH</h1>
-        <ul class="header__content__sub-title">
-          <li>UI&#47;UX DESIGNER <span class="padding">&#45;</span></li>
-          <li>WEB DEVELOPER <span class="padding">&#45;</span></li>
-          <li>PHOTOGRAPHAR</li>
-        </ul>
-        <a class="header__button" href="#">HAVE PROJECT? LET'S TALK</a>
-      </div>
-      <div class="social-icon pull-right">
-        <ul>
-          <li><a href="#"><i class="flaticon-facebook-letter-logo"></i></a></li>
-          <li><a href="#"><i class="flaticon-twitter-logo"></i></a></li>
-          <li><a href="#"><i class="flaticon-behance-logo"></i></a></li>
-          <li><a href="#"><i class="flaticon-dribbble-logo"></i></a></li>
-        </ul>
-      </div>
-    </div>
-  </header>
+        <nav>
+            <header>
+                <div id="mobile-menu-close">
+                    <i class="fa fa-window-close shadow-large" aria-hidden="true"></i>
+                </div>
+                <ul id="menu" class="shadow">
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="#experience">Experience</a>
+                    </li>
+                    <li>
+                        <a href="#skills">Skills</a>
+                    </li>
+                    <li>
+                        <a href="#education">Education</a>
+                    </li>
+                    <li>
+                        <a href="#projects">Projects</a>
+                    </li>
+                </ul>
+            </header>
+        </nav>
+        <section id="lead">
+            <div id="lead-content">
+                <img id="me" src="https://avatars.githubusercontent.com/u/67092102?v=4" alt="Me" />
+                <h2>______________________________________</h2>
+                <h1>Tejeshwar Reddy Devalapalli</h1>
+                <h2><u> epicman25 </u></h2>
+                <h2>
+                    I'm
+                    <span
+                        class="typewriter"
+                        data-period="2000"
+                        data-type='
+            ["a Software Craftsperson.",
+            "a Passion Driven Developer.",
+            "a Backend Developer.",
+            "glad to see you here :D",
+            "a Learner.", "a Maker.",
+            "an Explorer.",
+            "a Problem Solver.",
+            "in permanent beta :P",
+            "hoping you send me a Hi! :)"]'
+                    >
+                        <span class="wrap"></span>
+                    </span>
+                </h2>
+                <nav class="social">
+                    <ul>
+                        <li>
+                            <a href="mailto:tejeshwarreddydevalapalli@gmail.com" target="_blank" rel="noopener">
+                                <i class="fa fa-envelope" aria-hidden="true" title="Tejeshwar's Mail"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/epicman25" target="_blank" rel="noopener">
+                                <i class="fab fa-github" aria-hidden="true" title="Tejeshwar's GitHub Profile"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.linkedin.com/in/devalapallitejeshwarreddy/"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                <i class="fab fa-linkedin" aria-hidden="true" title="Tejeshwar's Linkedin Profile"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/ep1cman25" target="_blank" rel="noopener">
+                                <i class="fab fa-twitter" aria-hidden="true" title="Tejeshwar's Twitter Profile"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.reddit.com/user/Epicman2508" target="_blank" rel="noopener">
+                                <i class="fab fa-reddit" aria-hidden="true" title="Abhishek's Instagram Profile"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://discordapp.com/users/745152143761080432" target="_blank" rel="noopener">
+                                <i class="fab fa-discord" aria-hidden="true" title="Tejeshwar's Discord Profile"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="lead-overlay"></div>
+            <div id="lead-down">
+                <span>
+                    <i class="fa fa-chevron-down" aria-hidden="true" title="More"></i>
+                </span>
+            </div>
+        </section>
+        <section id="about">
+            <h2 class="heading">About Me</h2>
+            <p>
+                Hi visitor, Tejeshwar here, Welcome to my little space on the internet. I am a passionate software
+                developer and a problem solver in permanent beta.Have a habit of building backend using python
+                frameworks. Learning new things, making stuff, and exploring technology is my passion.<br />
+                <br />
+                Feel free to
+                <a href="mailto:tejeshwarreddydevalapalli@gmail.com" target="_blank" rel="noopener">shoot me a mail</a>
+                if anything here managed to catch your attention.
+            </p>
+        </section>
+        <section id="experience" class="background-alt">
+            <h2 class="heading">Experience</h2>
+            <div id="experience-timeline">
+                <div data-date="March 2022 – Present" class="shadow">
+                    <h3>Healthyverse</h3>
+                    <h4>Backend Developer</h4>
+                    Working in a <strong>Backend</strong> role implementing solutions for the needs of a startup.
+                    <ul>
+                        <li>
+                            Developed several API's using <strong>Python framework</strong> called
+                            <strong>FastAPI</strong>
+                        </li>
+                        <li>Integrated <strong>Firebase</strong> JWT services for user authentication.</li>
+                        <li>Wrote API's for handling media files stored in Azure Blob storage.</li>
+                        <li>Migrated code from github projects to Azure</li>
+                        <li>
+                            Wrote extensive tests for almost all production code, followed best practices for clean
+                            code.
+                        </li>
+                    </ul>
+                </div>
+                <div data-date="July 2021 – July 2022" class="shadow">
+                    <h3>CodeChef SRMAP Chapter</h3>
+                    <h4>Executive Member</h4>
+                    <ul>
+                        <li>
+                            Introduced competetive programming to the students in the university and formed a community
+                            for programming enthusiasts.
+                        </li>
+                        <li>
+                            Got to interact with students across the verious chapters and got to learn about the
+                            different aspects of programming.
+                        </li>
+                        <li>
+                            Raise awareness among students about the importance of clean code and open source software.
+                        </li>
+                    </ul>
+                </div>
+                <div data-date="June 2021 – July 2021" class="shadow">
+                    <h3>APSSDC</h3>
+                    <h4>Web Development Intern</h4>
+                    <ul>
+                        <li>
+                            It was a training internship in whcih I learnt about full stack development using Django
+                        </li>
+                        <li>Built a web app for task management and remainders using Django. cloud.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="projects" class="projects">
+            <h2 class="heading">Projects</h2>
+            <p>Some useful, some stupid, all fun!</p>
+            <section class="repos">
+                <input type="text" class="filter-repos hide" placeholder="Search Projects" />
+                <ul class="repo-list"></ul>
+            </section>
+        </section>
+        <section id="education" accesskey="r">
+            <h2 class="heading">Education</h2>
+            <div class="education-block shadow">
+                <h3><a href="https://srmap.edu.in/" target="_blank">SRM University,Andhra Pradesh</a></h3>
+                <span class="education-date"> August 2019 - Present</span>
+                <h4>Bachelor of Technology in Computer Science & Engineering</h4>
+                <ul>
+                    <li>
+                        Spent most of my time self-learning, doing Open-Source projects, problem-solving, and learning
+                        new technologies.
+                    </li>
+                    <li>
+                        Learned about core CS concepts like Data Structures, Algorithms, Operating Systems, Databases,
+                        Networking etc.
+                    </li>
+                    <li>Doing a major in Computer Science and Engineering, with a CGPA of 9.09/10.</li>
+                </ul>
+            </div>
+            <!-- End .education-block -->
+            <div class="education-block shadow">
+                <h3>Sri Chaitnaya Junior College</h3>
+                <span class="education-date"> 2017 - 2019</span>
+                <h4>Higher Secondary</h4>
+                <ul>
+                    <li>Graduated Higher Secondary with Maths, Physics, Chemistry, with a CGPA of 9.88/10</li>
+                </ul>
+            </div>
+            <!-- End .education-block -->
+        </section>
+        <section id="skills">
+            <h2 class="heading">Skills</h2>
+            <p>
+                I consider myself a tech agnostic developer and can easily pickup new skills depending on the task,
+                these are some of the tools that I have worked with over the years.
+            </p>
+            <ul>
+                <li>
+                    <a
+                        href="https://github.com/epicman25?tab=repositories&q=&language=python"
+                        target="_blank"
+                        rel="noopener"
+                        ><i class="devicon-python-plain colored" style="color: #3472a6"></i> Python</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://github.com/epicman25?tab=repositories&q=&language=python"
+                        target="_blank"
+                        rel="noopener"
+                        ><i class="devicon-fastapi-plain" style="color: #3472a6"></i> FastAPI</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://github.com/epicman25?tab=repositories&q=&language=python"
+                        target="_blank"
+                        rel="noopener"
+                        ><i class="devicon-django-plain" style="color: #3472a6"></i> Django</a
+                    >
+                </li>
+                <li>
+                    <a href="https://github.com/epicman25?tab=repositories&q=&language=c" target="_blank" rel="noopener"
+                        ><i class="devicon-c-plain colored"></i> C</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://github.com/epicman25?tab=repositories&q=&language=c%2B%2B"
+                        target="_blank"
+                        rel="noopener"
+                        ><i class="devicon-cplusplus-plain colored"></i> C++</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://github.com/epicman25?tab=repositories&q=&language=shell"
+                        target="_blank"
+                        rel="noopener"
+                        ><i class="devicon-bash-plain colored" style="color: #89e051"></i> Shell</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://github.com/epicman25?tab=repositories&q=&language=go"
+                        target="_blank"
+                        rel="noopener"
+                        ><i class="devicon-go-plain colored" style="color: #2ad2e4"></i> Go</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://github.com/epicman25?tab=repositories&q=&language=python"
+                        target="_blank"
+                        rel="noopener"
+                        ><i class="devicon-flask-original"></i> Flask</a
+                    >
+                </li>
 
-  <section class="about">
-    <div class="container about__container--narrow">
-      <div class="page-section">
-        <h2 class="page-section__title">ABOUT ME</h2>
-          <img class="page-section__title-style" src="assets/images/title-style.png" alt="">
-          <p class="page-section__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-          <div class="row gutters-80">
-            <div class="col-md-4">
-              <div class="about__image">
-                <img src="assets/images/about-me-image.png" alt="">
-              </div>
+                <li><i class="fab fa-markdown"></i> Markdown</li>
+                <li>
+                    <a
+                        href="https://github.com/epicman25?tab=repositories&q=&language=html"
+                        target="_blank"
+                        rel="noopener"
+                        ><i class="devicon-html5-plain colored"></i> HTML</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://github.com/epicman25?tab=repositories&q=&language=css"
+                        target="_blank"
+                        rel="noopener"
+                        ><i class="devicon-css3-plain colored"></i> CSS</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://github.com/epicman25?tab=repositories&q=&language=css"
+                        target="_blank"
+                        rel="noopener"
+                        ><i class="devicon-bootstrap-plain colored"></i> Bootstrap</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://github.com/epicman25?tab=repositories&q=&language=css"
+                        target="_blank"
+                        rel="noopener"
+                        ><i class="devicon-firebase-plain colored"></i> Firebase</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://github.com/epicman25?tab=repositories&q=&language=css"
+                        target="_blank"
+                        rel="noopener"
+                        ><i class="devicon-azure-plain colored"></i> Azure</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://github.com/epicman25?tab=repositories&q=&language=plsql"
+                        target="_blank"
+                        rel="noopener"
+                        ><i class="devicon-mysql-plain colored"></i> MySQL</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://github.com/epicman25?tab=repositories&q=&language=plsql"
+                        target="_blank"
+                        rel="noopener"
+                        ><i class="devicon-postgresql-plain colored"></i> PostgreSQL</a
+                    >
+                </li>
+                <li><i class="devicon-mongodb-plain colored"></i> MongoDB</li>
+                <li>
+                    <a
+                        href="https://github.com/epicman25?tab=repositories&q=&language=shell"
+                        target="_blank"
+                        rel="noopener"
+                        ><i class="devicon-linux-plain"></i> Linux</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://github.com/epicman25?tab=repositories&q=&language=dockerfile"
+                        target="_blank"
+                        rel="noopener"
+                        ><i class="devicon-docker-plain colored"></i> Docker</a
+                    >
+                </li>
+                <li><i class="devicon-amazonwebservices-plain colored"></i> AWS</li>
+                <li><i class="devicon-heroku-plain colored"></i> Heroku</li>
+                <li>
+                    <a
+                        href="https://github.com/epicman25?tab=repositories&q=&language=jupyter+notebook"
+                        target="_blank"
+                        rel="noopener"
+                        ><i class="devicon-jupyter-plain colored"></i> Jupyter</a
+                    >
+                </li>
+                <li><i class="devicon-visualstudio-plain" style="color: #21a0eb"></i> VS Code</li>
+                <li><i class="devicon-git-plain colored"></i> Git</li>
+                <li><i class="devicon-googlecloud-plain colored"></i> Google Cloud</li>
+            </ul>
+        </section>
+        <footer>
+            <div class="top">
+                <span id="to-top">
+                    <i class="fa fa-chevron-up" aria-hidden="true" title="Top"></i>
+                </span>
             </div>
-            <div class="col-md-8 about__content">
-              <p class="about__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
-              <div class="row row--margin-top">
-                <div class="col-md-4">
-                  <p class="about__bio"><strong>NAME :</strong> Jonny D. Dorsch</p>
-                  <p class="about__bio"><strong>AGE :</strong> 21</p>
-                </div>
-                <div class="col-md-4">
-                  <p class="about__bio"><strong>JOB TITLE :</strong> UI&#47;UX Designer</p>
-                  <p class="about__bio"><strong>LOCATION :</strong> California,USA</p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-4">
-                  <a class="button button--colorful button--margin" href="#">DOWNLOAD CV</a>
-                </div>
-                <div class="col-md-4">
-                  <a class="button button--colorful button--margin" href="#">HIRE ME</a>
-                </div>
-              </div>
+            <div class="copyright">
+                <p>Made with ❤ by Tejeshwar Reddy</p>
             </div>
-          </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="skill skill--bg">
-    <div class="container skill__container--narrow">
-      <div class="page-section">
-        <h2 class="page-section__title page-section__title--white">MY SKILL</h2>
-        <img class="page-section__title-style" src="assets/images/title-style-white.png" alt="">
-        <p class="page-section__paragraph page-section__paragraph--white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-        <div class="row gutters-60">
-          <div class="col-md-4">
-            <div class="thumbnail text-center">
-              <img src="assets/images/adobe-photoshop.png" alt="">
-              <h4 class="skill__single-part__title">ADOBE PHOTOSHOP</h4>
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width:80%;background-color: #7FB7FA;">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="thumbnail text-center">
-              <img src="assets/images/adobe-illustrator.png" alt="">
-              <h4 class="skill__single-part__title">ADOBE PHOTOSHOP</h4>
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width:80%;background-color: #FFAC1B;;">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="thumbnail text-center">
-              <img src="assets/images/adobe-after-effects.png" alt="">
-              <h4 class="skill__single-part__title">ADOBE PHOTOSHOP</h4>
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width:80%;background-color: #C99AFF;">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="service">
-    <div class="container">
-      <div class="page-section">
-        <h2 class="page-section__title">MY SERVICES</h2>
-        <img class="page-section__title-style" src="assets/images/title-style.png" alt="">
-        <p class="page-section__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-        <div class="row gutters-70">
-          <div class="col-md-4">
-            <div class="thumbnail text-center">
-              <img src="assets/images/logo-design.png" alt="">
-              <h4 class="service__single-section__title">LOGO DESIGN</h4>
-              <p class="service__single-section__paragraph">magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="thumbnail text-center">
-              <img src="assets/images/website-design.png" alt="">
-              <h4 class="service__single-section__title">WEBSITE DESIGN</h4>
-              <p class="service__single-section__paragraph">magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="thumbnail text-center">
-              <img src="assets/images/support.png" alt="">
-              <h4 class="service__single-section__title">SUPPORT</h4>
-              <p class="service__single-section__paragraph">magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="overview overview--bg">
-    <div class="container">
-      <div class="page-section">
-        <div class="row gutters-140">
-        <div class="col-xs-6 col-lg-3 overview__single-section">
-          <i class="material-icons">headset_mic</i>
-          <h2 class="overview__single-section__number">220</h2>
-          <p class="overview__single-section__title">Hand to Work</p>
-        </div>
-        <div class="col-xs-6 col-lg-3 overview__single-section">
-          <i class="material-icons">mood</i>
-          <h2 class="overview__single-section__number">530</h2>
-          <p class="overview__single-section__title">Happy Client</p>
-        </div>
-        <div class="col-xs-6 col-lg-3 overview__single-section">
-          <i class="material-icons">assignment_turned_in</i>
-          <h2 class="overview__single-section__number">780</h2>
-          <p class="overview__single-section__title">Finished Project</p>
-        </div>
-        <div class="col-xs-6 col-lg-3 overview__single-section">
-          <i class="material-icons">local_bar</i>
-          <h2 class="overview__single-section__number">970</h2>
-          <p class="overview__single-section__title">Cups of coffe</p>
-        </div>
-      </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="portfolio">
-    <div class="container">
-      <div class="page-section">
-        <h2 class="page-section__title">MY PORTFOLIO</h2>
-        <img class="page-section__title-style" src="assets/images/title-style.png" alt="">
-        <p class="page-section__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-        <div class="portfolio__button-group">
-          <a class="button button--default" data-filter="all" href="#">ALL</a>
-          <a class="button button--default" data-filter=".category-a" href="#">DEVELOPMENT</a>
-          <a class="button button--default" data-filter=".category-b" href="#">DESIGN</a>
-          <a class="button button--default" data-filter=".category-c" href="#">HTML</a>
-          <a class="button button--default" data-filter=".category-d" href="#">JAVA</a>
-        </div>
-        <div class="row gutters-40">
-          <div class="col-md-4">
-            <div class="portfolio__single-section mix category-a category-b category-c" data-order="1">
-              <img class="portfolio__single-section__image img-responsive" src="assets/images/portfolio-1.png" alt="">
-              <div class="portfolio__single-section__overlay">
-                <div class="overlay-content">
-                  <h4>LOGO DESIGN</h4>
-                  <p>Designer</p>
-                </div>
-                <div class="portfolio__single-section__search-icon">
-                  <a href="#"><img src="assets/images/search-icon.png" alt=""></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="portfolio__single-section mix category-a category-c" data-order="2">
-              <img class="portfolio__single-section__image img-responsive" src="assets/images/portfolio-2.png" alt="">
-              <div class="portfolio__single-section__overlay">
-                <div class="overlay-content">
-                  <h4>WEBSITE DESIGN</h4>
-                  <p>Designer</p>
-                </div>
-                <div class="portfolio__single-section__search-icon">
-                  <a href="#"><img src="assets/images/search-icon.png" alt=""></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="portfolio__single-section mix category-c" data-order="3">
-              <img class="portfolio__single-section__image img-responsive" src="assets/images/portfolio-3.png" alt="">
-              <div class="portfolio__single-section__overlay">
-                <div class="overlay-content">
-                  <h4>LOGO DESIGN</h4>
-                  <p>Designer</p>
-                </div>
-                <div class="portfolio__single-section__search-icon">
-                  <a href="#"><img src="assets/images/search-icon.png" alt=""></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row gutters-40">
-          <div class="col-md-4">
-            <div class="portfolio__single-section mix category-b category-d" data-order="4">
-              <img class="portfolio__single-section__image img-responsive" src="assets/images/portfolio-4.png" alt="">
-              <div class="portfolio__single-section__overlay">
-                <div class="overlay-content">
-                  <h4>PHOTOGRAPHY</h4>
-                  <p>photographer</p>
-                </div>
-                <div class="portfolio__single-section__search-icon">
-                  <a href="#"><img src="assets/images/search-icon.png" alt=""></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="portfolio__single-section mix category-b category-d" data-order="5">
-              <img class="portfolio__single-section__image img-responsive" src="assets/images/portfolio-5.png" alt="">
-              <div class="portfolio__single-section__overlay">
-                <div class="overlay-content">
-                  <h4>WEBSITE DESIGN</h4>
-                  <p>Designer</p>
-                </div>
-                <div class="portfolio__single-section__search-icon">
-                  <a href="#"><img src="assets/images/search-icon.png" alt=""></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="portfolio__single-section mix category-d" data-order="6">
-              <img class="portfolio__single-section__image img-responsive" src="assets/images/portfolio-6.png" alt="">
-              <div class="portfolio__single-section__overlay">
-                <div class="overlay-content">
-                  <h4>LOGO DESIGN</h4>
-                  <p>Designer</p>
-                </div>
-                <div class="portfolio__single-section__search-icon">
-                  <a href="#"><img src="assets/images/search-icon.png" alt=""></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="slider slider--bg">
-    <div id="myCarousel" class="carousel container slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-
-      <div class="carousel-inner">
-        <div class="item active">
-          <div class="carousel-content">
-            <div class="">
-              <div class="text-center">
-                <img src="assets/images/me.png" alt="">
-                <h4>Michael T. Hill</h4>
-                <h6>Designer</h6>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, </p>
-                <div class="rating">
-                  <ul>
-                    <li><i class="material-icons">star</i></li>
-                    <li><i class="material-icons">star</i></li>
-                    <li><i class="material-icons">star</i></li>
-                    <li><i class="material-icons">star</i></li>
-                    <li><i class="material-icons">star</i></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="carousel-content">
-            <div class="">
-              <div class="text-center">
-                <img class="carousel-person-image" src="assets/images/team-2.png" alt="">
-                <h4>Leonard D. Downing</h4>
-                <h6>Photographer</h6>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, </p>
-                <div class="rating">
-                  <ul>
-                    <li><i class="material-icons">star</i></li>
-                    <li><i class="material-icons">star</i></li>
-                    <li><i class="material-icons">star</i></li>
-                    <li><i class="material-icons">star</i></li>
-                    <li><i class="material-icons">star</i></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="carousel-content">
-            <div class="">
-              <div class="text-center">
-                <img class="carousel-person-image" src="assets/images/team-3.png" alt="">
-                <h4>Paula R. Mullins</h4>
-                <h6>Designer</h6>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, </p>
-                <div class="rating">
-                  <ul>
-                    <li><i class="material-icons">star</i></li>
-                    <li><i class="material-icons">star</i></li>
-                    <li><i class="material-icons">star</i></li>
-                    <li><i class="material-icons">star</i></li>
-                    <li><i class="material-icons">star</i></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="team">
-    <div class="container">
-      <div class="page-section">
-        <h2 class="page-section__title">MY TEAM</h2>
-        <img class="page-section__title-style" src="assets/images/title-style.png" alt="">
-        <p class="page-section__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-        <div class="row gutters-40">
-          <div class="col-md-6 col-lg-3">
-            <div class="thumbnail">
-              <img class="img-responsive" src="assets/images/team-1.png" alt="">
-              <h4 class="team__single-section__name">VIOLET R. PETERS</h4>
-              <p class="team__single-section__title">FOUNDER</p>
-
-              <div class="team__overlay">
-                <div class="team__overlay__content">
-                  <div class="team__single-section--backPage">
-                    <h4 style="padding-left: 0;" class="team__single-section__name">VIOLET R. PETERS</h4>
-                    <p style="padding-left: 0;" class="team__single-section__title">FOUNDER</p>
-                    <p class="team__single-section--backPage__title">Adobe Photoshop <span class="team__single-section--backPage__percent90">90&#37;</span></p>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width:90%;background-color: #7F56FD;">
-                        <span class="progress-bar--dot-main"></span>
-                        <span class="progress-bar--dot"></span>
-                      </div>
-                    </div>
-                    <p class="team__single-section--backPage__title">Adobe Illustrator <span class="team__single-section--backPage__percent80">80&#37;</span></p>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width:80%;background-color: #7F56FD;">
-                        <span class="progress-bar--dot-main"></span>
-                        <span class="progress-bar--dot"></span>
-                      </div>
-                    </div>
-                    <p class="team__single-section--backPage__title">After Effect <span class="team__single-section--backPage__percent70">70&#37;</span></p>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width:70%;background-color: #7F56FD;">
-                        <span class="progress-bar--dot-main"></span>
-                        <span class="progress-bar--dot"></span>
-                      </div>
-                    </div>
-                    <hr style="border: 0;border-bottom: 1px solid #ECEFF1;display:block;padding-top: 45px;">
-                    <div class="social-icons">
-                      <ul>
-                        <li><a href="#"><i class="flaticon-facebook-letter-logo"></i></a></li>
-                        <li><a href="#"><i class="flaticon-twitter-logo"></i></a></li>
-                        <li><a href="#"><i class="flaticon-dribbble-logo"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="thumbnail">
-              <img src="assets/images/team-3.png" alt="">
-              <h4 class="team__single-section__name">PAULA R. MULLINS</h4>
-              <p class="team__single-section__title">FOUNDER</p>
-              <div class="team__overlay">
-                <div class="team__overlay__content">
-                  <div class="team__single-section--backPage">
-                    <h4 style="padding-left: 0;" class="team__single-section__name">PAULA R. MULLINS</h4>
-                    <p style="padding-left: 0;" class="team__single-section__title">FOUNDER</p>
-                    <p class="team__single-section--backPage__title">Adobe Photoshop <span class="team__single-section--backPage__percent90">90&#37;</span></p>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width:90%;background-color: #7F56FD;">
-                        <span class="progress-bar--dot-main"></span>
-                        <span class="progress-bar--dot"></span>
-                      </div>
-                    </div>
-                    <p class="team__single-section--backPage__title">Adobe Illustrator <span class="team__single-section--backPage__percent80">80&#37;</span></p>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width:80%;background-color: #7F56FD;">
-                        <span class="progress-bar--dot-main"></span>
-                        <span class="progress-bar--dot"></span>
-                      </div>
-                    </div>
-                    <p class="team__single-section--backPage__title">After Effect <span class="team__single-section--backPage__percent70">70&#37;</span></p>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width:70%;background-color: #7F56FD;">
-                        <span class="progress-bar--dot-main"></span>
-                        <span class="progress-bar--dot"></span>
-                      </div>
-                    </div>
-                    <hr style="border: 0;border-bottom: 1px solid #ECEFF1;display:block;padding-top: 45px;">
-                    <div class="social-icons">
-                      <ul>
-                        <li><a href="#"><i class="flaticon-facebook-letter-logo"></i></a></li>
-                        <li><a href="#"><i class="flaticon-twitter-logo"></i></a></li>
-                        <li><a href="#"><i class="flaticon-dribbble-logo"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="thumbnail">
-              <img src="assets/images/team-2.png" alt="">
-              <h4 class="team__single-section__name">LEONARD D. DOWNING</h4>
-              <p class="team__single-section__title">FOUNDER</p>
-              <div class="team__overlay">
-                <div class="team__overlay__content">
-                  <div class="team__single-section--backPage">
-                    <h4 style="padding-left: 0;" class="team__single-section__name">LEONARD D. DOWNING</h4>
-                    <p style="padding-left: 0;" class="team__single-section__title">FOUNDER</p>
-                    <p class="team__single-section--backPage__title">Adobe Photoshop <span class="team__single-section--backPage__percent90">90&#37;</span></p>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width:90%;background-color: #7F56FD;">
-                        <span class="progress-bar--dot-main"></span>
-                        <span class="progress-bar--dot"></span>
-                      </div>
-                    </div>
-                    <p class="team__single-section--backPage__title">Adobe Illustrator <span class="team__single-section--backPage__percent80">80&#37;</span></p>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width:80%;background-color: #7F56FD;">
-                        <span class="progress-bar--dot-main"></span>
-                        <span class="progress-bar--dot"></span>
-                      </div>
-                    </div>
-                    <p class="team__single-section--backPage__title">After Effect <span class="team__single-section--backPage__percent70">70&#37;</span></p>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width:70%;background-color: #7F56FD;">
-                        <span class="progress-bar--dot-main"></span>
-                        <span class="progress-bar--dot"></span>
-                      </div>
-                    </div>
-                    <hr style="border: 0;border-bottom: 1px solid #ECEFF1;display:block;padding-top: 45px;">
-                    <div class="social-icons">
-                      <ul>
-                        <li><a href="#"><i class="flaticon-facebook-letter-logo"></i></a></li>
-                        <li><a href="#"><i class="flaticon-twitter-logo"></i></a></li>
-                        <li><a href="#"><i class="flaticon-dribbble-logo"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="thumbnail">
-              <img src="assets/images/team-3.png" alt="">
-              <h4 class="team__single-section__name">PAULA R. MULLINS</h4>
-              <p class="team__single-section__title">FOUNDER</p>
-              <div class="team__overlay">
-                <div class="team__overlay__content">
-                  <div class="team__single-section--backPage">
-                    <h4 style="padding-left: 0;" class="team__single-section__name">PAULA R. MULLINS</h4>
-                    <p style="padding-left: 0;" class="team__single-section__title">FOUNDER</p>
-                    <p class="team__single-section--backPage__title">Adobe Photoshop <span class="team__single-section--backPage__percent90">90&#37;</span></p>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width:90%;background-color: #7F56FD;">
-                        <span class="progress-bar--dot-main"></span>
-                        <span class="progress-bar--dot"></span>
-                      </div>
-                    </div>
-                    <p class="team__single-section--backPage__title">Adobe Illustrator <span class="team__single-section--backPage__percent80">80&#37;</span></p>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width:80%;background-color: #7F56FD;">
-                        <span class="progress-bar--dot-main"></span>
-                        <span class="progress-bar--dot"></span>
-                      </div>
-                    </div>
-                    <p class="team__single-section--backPage__title">After Effect <span class="team__single-section--backPage__percent70">70&#37;</span></p>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width:70%;background-color: #7F56FD;">
-                        <span class="progress-bar--dot-main"></span>
-                        <span class="progress-bar--dot"></span>
-                      </div>
-                    </div>
-                    <hr style="border: 0;border-bottom: 1px solid #ECEFF1;display:block;padding-top: 45px;">
-                    <div class="social-icons">
-                      <ul>
-                        <li><a href="#"><i class="flaticon-facebook-letter-logo"></i></a></li>
-                        <li><a href="#"><i class="flaticon-twitter-logo"></i></a></li>
-                        <li><a href="#"><i class="flaticon-dribbble-logo"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="brand-logo brand-logo--bg">
-    <div class="container">
-      <div class="row">
-        <div class="brand-logo__wrapper">
-          <li><img class="img-responsive" src="assets/images/brand-1.png" alt=""></li>
-          <li><img class="img-responsive" src="assets/images/brand-2.png" alt=""></li>
-          <li><img class="img-responsive" src="assets/images/brand-3.png" alt=""></li>
-          <li><img class="img-responsive" src="assets/images/brand-4.png" alt=""></li>
-          <li><img class="img-responsive" src="assets/images/brand-1.png" alt=""></li>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="blog">
-    <div class="container">
-      <div class="page-section">
-        <h2 class="page-section__title">BLOG POST</h2>
-        <img class="page-section__title-style" src="assets/images/title-style.png" alt="">
-        <p class="page-section__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-        <div class="row gutters-40">
-          <div class="col-md-4">
-            <div class="thumbnail text-center">
-              <img class="img-responsive" src="assets/images/blog-1.png" alt="">
-              <p class="blog__single__date">MAY 25 , 2017 </p>
-              <i class="material-icons">comment</i> 5
-              <a href="#"><h4 class="blog__single__title">HEADLINE LATEST WORLD NEWS</h4></a>
-              <p class="blog__single__paragraph">orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore  Ut enim ad minim veniam <a href="#"><span class="blog__single__paragraph--read-more">READ MORE...</span></a></p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="thumbnail text-center">
-              <img src="assets/images/blog-2.png" alt="">
-              <p class="blog__single__date">MAY 25 , 2017 </p>
-              <i class="material-icons">comment</i> 5
-              <a href="#"><h4 class="blog__single__title">HEADLINE LATEST WORLD NEWS</h4></a>
-              <p class="blog__single__paragraph">orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore  Ut enim ad minim veniam <a href="#"><span class="blog__single__paragraph--read-more">READ MORE...</span></a></p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="thumbnail text-center">
-              <img src="assets/images/blog-3.png" alt="">
-              <p class="blog__single__date">MAY 25 , 2017 </p>
-              <i class="material-icons">comment</i> 5
-              <a href="#"><h4 class="blog__single__title">HEADLINE LATEST WORLD NEWS</h4></a>
-              <p class="blog__single__paragraph">orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore  Ut enim ad minim veniam <a href="#"><span class="blog__single__paragraph--read-more">READ MORE...</span></a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer footer--bg">
-    <div class="container text-center">
-      <h1 class="footer__title">OBELA</h1>
-      <ul class="footer__contact-information">
-        <li><a href="tel:5555555555"><i class="material-icons">phone</i> Hotline (+123) 45 67 89 21</a></li>
-        <li><a href="mailto:sshariar458@gmail.com"><i class="material-icons">email</i> sshahriar458@gmail.com</a></li>
-        <li><a href="#"><i class="material-icons">location_on</i> DartThemes address goes here.</a></li>
-      </ul>
-    </div>
-    <hr style="border: 0;border-top: 1px solid #525B60;display:block;margin-top: 40px;">
-    <div class="container text-center">
-      <div class="social-icon">
-        <ul>
-          <li><a href="#"><i class="flaticon-facebook-letter-logo"></i></a></li>
-          <li><a href="#"><i class="flaticon-twitter-logo"></i></a></li>
-          <li><a href="#"><i class="flaticon-behance-logo"></i></a></li>
-          <li><a href="#"><i class="flaticon-dribbble-logo"></i></a></li>
-        </ul>
-      </div>
-      <p class="footer__paragraph">Copyright &copy; 2017 DartThemes , All Rights Reserved.</p>
-    </div>
-  </footer>
-</div>
-  <script src="assets/jquery/jquery-3.2.1.min.js"></script>
-  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-  <script src="js/mixitup.js"></script>
-
-  <script>
-    $('a').click(function(e)
-      {
-        e.preventDefault();
-      });
-
-    // calling mixitup
-    var mixer = mixitup(".portfolio");
-  </script>
-</body>
-</html>  
+        </footer>
+        <!-- Fixes for Firefox and IE -->
+        <script>
+            var isIE = !!window.MSInputMethodContext && !!document.documentMode;
+            var isFirefox = navigator.userAgent.toLowerCase().indexOf("firefox") > -1;
+            if (isIE || isFirefox) {
+                var font = document.createElement("link");
+                font.rel = "stylesheet";
+                font.type = "text/css";
+                font.href = "https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap";
+                document.head.appendChild(font);
+                var fontAwesome = document.createElement("link");
+                fontAwesome.rel = "stylesheet";
+                fontAwesome.type = "text/css";
+                fontAwesome.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css";
+                document.head.appendChild(fontAwesome);
+                var devicon = document.createElement("link");
+                devicon.rel = "stylesheet";
+                devicon.type = "text/css";
+                devicon.href = "https://cdnjs.cloudflare.com/ajax/libs/devicon/2.4/devicon.min.css";
+                document.head.append(devicon);
+                var bootstrap = document.createElement("link");
+                bootstrap.rel = "stylesheet";
+                bootstrap.type = "text/css";
+                bootstrap.href = "https://cdnjs.cloudflare.com/ajax/libs/devicon/2.4/devicon.min.css";
+                document.head.append(bootstrap);
+            }
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="scripts/scripts.min.js"></script>
+    </body>
+</html>
