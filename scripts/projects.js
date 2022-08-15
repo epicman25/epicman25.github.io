@@ -56,46 +56,73 @@ const getRepos = async function () {
 getRepos();
 
 // display list of all user's public repos
-const displayRepos = function (repos) {
-    filterInput.classList.remove("hide");
+const displayRepos = (repos) => {
+    const userHome = `https://github.com/${username}`
+    filterInput.classList.remove('hide');
     for (const repo of repos) {
-        let listItem = document.createElement("li");
-        listItem.classList.add("repo");
+        
+        const langUrl = `${userHome}?tab=repositories&q=&language=${repo.language}`
+        const starsUrl = `${userHome}/${repo.name}/stargazers`
+        const forksUrl = `${userHome}/${repo.name}/network/members`
+
+        let listItem = document.createElement('li');
+        listItem.classList.add('repo');
         listItem.innerHTML = `
             <h3>${repo.name}</h3>
-            <span>${repo.description}</span> <br/><br/>
-            <a href="https://github.com/epicman25?tab=repositories&q=&language=${
-                repo.language
-            }">
-            <span>${devicons[repo.language]}</span> <br />
-            </a>
-            <br />
-            <a class="link-btn" href=${repo.html_url}>View Project</a>`;
+            <span>${repo.description}</span> <br/><br/>`
+
+        if (repo.stargazers_count > 0) {
+            listItem.innerHTML += `<a href="${starsUrl}">
+            <span>⭐ ${repo.stargazers_count}</span></a>`
+        }
+
+        if (repo.language) {
+            listItem.innerHTML += `<a href="${langUrl}">
+            <span>${devicons[repo.language]}</span></a>`
+        }
+
+        if (repo.forks_count > 0) {
+            listItem.innerHTML += `<a href="${starsUrl}">
+            <span>${devicons["Git"]} ${repo.forks_count}</span></a>`
+        }
+
+        if (repo.homepage && repo.homepage !== "") {
+            listItem.innerHTML += `<br /> <br />
+            <a class="link-btn" href=${repo.html_url}>Code ${devicons["Github"]}</a>
+            <a class="link-btn" href=${repo.homepage}>Live ${devicons["Chrome"]}</a> <br />`;
+        } else {
+            listItem.innerHTML += `<br /> <br />
+            <a class="link-btn" href=${repo.html_url}>View Project ${devicons["Github"]}</a><br />`;
+        }
+
         repoList.append(listItem);
     }
 };
 
 // dynamic search
-filterInput.addEventListener("input", function (e) {
+filterInput.addEventListener('input', (e) => {
     const search = e.target.value;
-    const repos = document.querySelectorAll(".repo");
+    const repos = document.querySelectorAll('.repo');
     const searchLowerText = search.toLowerCase();
 
     for (const repo of repos) {
         const lowerText = repo.innerText.toLowerCase();
         if (lowerText.includes(searchLowerText)) {
-            repo.classList.remove("hide");
+            repo.classList.remove('hide');
         } else {
-            repo.classList.add("hide");
+            repo.classList.add('hide');
         }
     }
 });
 
 // for programming language icons
 const devicons = {
+    Git: '<i class="devicon-git-plain" style="color: #555"></i>',
+    Github: '<i class="devicon-github-plain" style="color: #1688f0"></i>',
+    Chrome: '<i class="devicon-chrome-plain" style="color: #1688f0"></i>',
     Assembly: '<i class="devicon-labview-plain colored"></i> Assembly',
-    "C#": '<i class="devicon-csharp-plain colored"></i> C#',
-    "C++": '<i class="devicon-cplusplus-plain colored"></i> C++',
+    'C#': '<i class="devicon-csharp-plain colored"></i> C#',
+    'C++': '<i class="devicon-cplusplus-plain colored"></i> C++',
     C: '<i class="devicon-c-plain colored"></i> C',
     Clojure: '<i class="devicon-clojure-plain colored"></i> C',
     CoffeeScript:
@@ -107,7 +134,7 @@ const devicons = {
     Elixir: '<i class="devicon-elixir-plain colored"></i> Elixir',
     Elm: '<i class="devicon-elm-plain colored"></i> Elm',
     Erlang: '<i class="devicon-erlang-plain colored"></i> Erlang',
-    "F#": '<i class="devicon-fsharp-plain colored"></i> F#',
+    'F#': '<i class="devicon-fsharp-plain colored"></i> F#',
     Go: '<i class="devicon-go-plain colored"></i> Go',
     Groovy: '<i class="devicon-groovy-plain colored"></i> Groovy',
     HTML: '<i class="devicon-html5-plain colored"></i> HTML',
@@ -115,7 +142,7 @@ const devicons = {
     Java: '<i class="devicon-java-plain colored" style="color: #ffca2c"></i> Java',
     JavaScript: '<i class="devicon-javascript-plain colored"></i> JavaScript',
     Julia: '<i class="devicon-julia-plain colored"></i> Julia',
-    "Jupyter Notebook": '<i class="devicon-jupyter-plain colored"></i> Jupyter',
+    'Jupyter Notebook': '<i class="devicon-jupyter-plain colored"></i> Jupyter',
     Kotlin: '<i class="devicon-kotlin-plain colored" style="color: #796bdc"></i> Kotlin',
     Latex: '<i class="devicon-latex-plain colored"></i> Latex',
     Lua: '<i class="devicon-lua-plain-wordmark colored" style="color: #0000d0"></i> Lua',
@@ -142,7 +169,6 @@ const devicons = {
     Swift: '<i class="devicon-swift-plain colored"></i> Swift',
     Terraform: '<i class="devicon-terraform-plain colored"></i> Terraform',
     TypeScript: '<i class="devicon-typescript-plain colored"></i> TypeScript',
-    "Vim Script": '<i class="devicon-vim-plain colored"></i> Vim Script',
+    'Vim Script': '<i class="devicon-vim-plain colored"></i> Vim Script',
     Vue: '<i class="devicon-vuejs-plain colored"></i> Vue',
-    null: '<i class="devicon-markdown-original"></i> Markdown',
 };
