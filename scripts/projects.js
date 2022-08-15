@@ -24,21 +24,12 @@ getProfile();
 const displayProfile = function (profile) {
     const userInfo = document.querySelector(".user-info");
     userInfo.innerHTML = `
-        <figure>
-            <img alt="user avatar" src=${profile.avatar_url} />
-        </figure>
-        <div>
-            <h2><a href=${profile.blog}><strong>${profile.name}</strong></a></h2>
-            <p>${profile.bio}</p>
+        
             <p>
-                <strong>Location:</strong> ${profile.location}
-            </p>
-            <p>
-                <strong>@${profile.login} </strong>
+            <a href="https://github.com/epicman25" target="blank_"><strong>@${profile.login} </strong></a>
                 Repos: ${profile.public_repos}
                 Gists: ${profile.public_gists}
             </p>
-        </div>
     `;
 };
 
