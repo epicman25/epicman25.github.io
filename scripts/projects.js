@@ -26,7 +26,7 @@ const displayProfile = function (profile) {
     userInfo.innerHTML = `
         
             <p>
-            <a href="https://github.com/epicman25" target="blank_"><strong>@${profile.login} </strong></a>
+            <a href="https://github.com/epicman25" target="blank_"><strong>z@epicman25</strong></a>
                 Repos: ${profile.public_repos}
                 Gists: ${profile.public_gists}
             </p>
