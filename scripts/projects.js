@@ -172,3 +172,142 @@ const devicons = {
     'Vim Script': '<i class="devicon-vim-plain colored"></i> Vim Script',
     Vue: '<i class="devicon-vuejs-plain colored"></i> Vue',
 };
+
+
+// const username = 'epicman25';
+const linkList = document.querySelector('.link-list');
+const linksSection = document.querySelector('.links');
+const linksfilterInput = document.querySelector('.filter-links');
+
+const buildIcon = (link) => {
+    return `
+        <span class='${link.icon}' style='color: ${link.color};'></span>
+    `;
+};
+
+const buildUrl = (link) => {
+    if (link.url.includes('http')) {
+        return link.url;
+    }
+    if (link.url.includes('mailto')) {
+        return link.url;
+    }
+    return 'https://' + link.url;
+};
+
+const displayLinks = (links) => {
+    linksfilterInput.classList.remove('hide');
+    for (const link of links) {
+        let listItem = document.createElement('li');
+        listItem.classList.add('link');
+        listItem.innerHTML = `
+            <a href=${buildUrl(link)} target='_blank'>
+                <div>
+                    <h3>
+                        ${buildIcon(link)}
+                        ${link.name}
+                    </h3>
+                    <p>${link.description}</p>
+                </div>
+            </a>`;
+        linkList.append(listItem);
+    }
+};
+
+// dynamic search
+linksfilterInput.addEventListener('input', (e) => {
+    const search = e.target.value;
+    const links = document.querySelectorAll('.link');
+    const searchLowerText = search.toLowerCase();
+
+    for (const link of links) {
+        const lowerText = link.innerText.toLowerCase();
+        if (lowerText.includes(searchLowerText)) {
+            link.classList.remove('hide');
+        } else {
+            link.classList.add('hide');
+        }
+    }
+});
+
+const links = [
+    {
+        name: 'Mail',
+        description: 'Want to talk? Write me a mail',
+        url: 'mailto:tejeshwarreddydevalapalli@gmail.com',
+        icon: 'fa-brands fa-telegram',
+        color: '#0088cc'
+    },
+    {
+        name: 'GitHub',
+        description: 'My favourite place :)',
+        url: 'github.com/epicman25',
+        icon: 'fa-brands fa-github',
+        color: '#fff'
+    },
+    {
+        name: 'Resume',
+        description: 'What I have done so far',
+        url: 'https://github.com/2kabhishek/resume/blob/main/resume.pdf',
+        icon: 'fa-brands fa-wpforms',
+        color: '#008abd'
+    },
+    {
+        name: 'Twitter',
+        description: 'Tech, rants, philosophy, memes',
+        url: 'twitter.com/ep1cman25',
+        icon: 'fa-brands fa-twitter',
+        color: '#1da1f2'
+    },
+    {
+        name: 'LinkedIn',
+        description: 'Career updates and thoughts',
+        url: 'https://www.linkedin.com/in/devalapallitejeshwar/',
+        icon: 'fa-brands fa-linkedin',
+        color: '#0077B5'
+    },
+    {
+        name: 'Portfolio',
+        description: 'Will come to this page again',
+        url: 'https://tejeshwar.dev',
+        icon: 'fa-brands fa-fort-awesome',
+        color: '#1688f0'
+    },
+    {
+        name: 'Projects',
+        description: 'All my projects!',
+        url: 'https://tejeshwar.dev/#projects',
+        icon: 'fa-brands fa-product-hunt',
+        color: '#da552f'
+    },
+    {
+        name: 'Reddit',
+        description: 'Lurk mostly, sometimes I post',
+        url: 'reddit.com/user/ep1cman25',
+        icon: 'fa-brands fa-reddit',
+        color: '#ff4500'
+    },
+    {
+        name: 'Dev',
+        description: 'Where I connect with Devs',
+        url: 'dev.to/epicman25',
+        icon: 'fa-brands fa-dev',
+        color: '#ccc'
+    },
+    {
+        name: 'Leetcode',
+        description: 'More problem solving',
+        url: 'leetcode.com/epicman25',
+        icon: 'fa-brands fa-black-tie',
+        color: '#e08b32'
+    },
+    {
+        name: 'Medium',
+        description: 'May write blogs here',
+        url: 'medium.com/@epicman25',
+        icon: 'fa-brands fa-medium',
+        color: '#e08b32'
+    },
+];
+
+displayLinks(links);
