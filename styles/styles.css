@@ -528,6 +528,7 @@ footer {
 #skills {
     padding: 50px 15px 20px 15px;
     text-align: center;
+    border-bottom: 1px solid #dcd9d9;
 }
 #skills h2 {
     color: #efefef;
