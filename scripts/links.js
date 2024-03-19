@@ -72,7 +72,7 @@ const links = [
     {
         name: 'Resume',
         description: 'What I have done so far',
-        url: 'https://github.com/2kabhishek/resume/blob/main/resume.pdf',
+        url: 'https://github.com/epicman25/epicman25.github.io/blob/main/TejeshwarReddy_Resume.pdf',
         icon: 'fa-brands fa-wpforms',
         color: '#008abd'
     },
