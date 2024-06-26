@@ -222,12 +222,18 @@ linksfilterInput.addEventListener('input', (e) => {
 
     for (const link of links) {
         const lowerText = link.innerText.toLowerCase();
-        if (lowerText.includes(searchLowerText)) {
-            link.classList.remove('hide');
+        const isPdf = link.href.endsWith('.pdf'); // Check if the link ends with .pdf
+    
+        if (lowerText.includes(search)) {
+          // Show the link and add the download attribute if it's a PDF
+          link.classList.remove('hide');
+          if (isPdf) {
+            link.setAttribute('download', ''); // Set download attribute for PDFs without a specific filename
+          }
         } else {
-            link.classList.add('hide');
+          link.classList.add('hide');
         }
-    }
+      }
 });
 
 const links = [
@@ -248,7 +254,8 @@ const links = [
     {
         name: 'Resume',
         description: 'What I have done so far',
-        url: 'https://github.com/epicman25/epicman25.github.io/blob/main/TejeshwarReddy_Resume.pdf',
+        // url: 'https://github.com/epicman25/epicman25.github.io/blob/main/TejeshwarReddy_Resume.pdf',
+        url: 'https://drive.google.com/file/d/10BDiv8rG13wEHyyQN7auTBoqSllLbC5n/view?usp=sharing',
         icon: 'fa-brands fa-wpforms',
         color: '#008abd'
     },
@@ -262,7 +269,7 @@ const links = [
     {
         name: 'LinkedIn',
         description: 'Career updates and thoughts',
-        url: 'https://www.linkedin.com/in/devalapallitejeshwar/',
+        url: 'https://www.linkedin.com/in/devalapallitejeshwarreddy/',
         icon: 'fa-brands fa-linkedin',
         color: '#0077B5'
     },
