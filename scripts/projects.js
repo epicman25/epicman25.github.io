@@ -254,7 +254,6 @@ const links = [
     {
         name: 'Resume',
         description: 'What I have done so far',
-        // url: 'https://github.com/epicman25/epicman25.github.io/blob/main/TejeshwarReddy_Resume.pdf',
         url: 'https://drive.google.com/file/d/10BDiv8rG13wEHyyQN7auTBoqSllLbC5n/view?usp=sharing',
         icon: 'fa-brands fa-wpforms',
         color: '#008abd'
