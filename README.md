@@ -18,3 +18,5 @@ This is the source for my personal portfolio site of the same name.
 - Projects - Projects undertaken with links to source/live version.
 
 - Skills - Lists acquired skills and industrial knowledge.
+
+- Links - Links to social media profiles, resume, etc.
