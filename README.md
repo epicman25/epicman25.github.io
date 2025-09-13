@@ -1,7 +1,14 @@
 
 
-This is the source for my personal portfolio site of the same name.
+# Portfolio Website
+
+This is a simple HTML portfolio website showcasing my professional experience, skills, and projects.
+
 [Live version](https://tejeshwar.dev)
+
+## About
+
+A clean, responsive HTML portfolio built with vanilla HTML, CSS, and JavaScript. No frameworks or build tools required - just open `index.html` in any web browser!
 
 
 

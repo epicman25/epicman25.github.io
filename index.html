@@ -1,406 +1,538 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
 
 <head>
-    <meta content="text/html" charset="UTF-8" http-equiv="Content-Type" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="" />
-    <title>Tejeshwar Reddy</title>
-    <link rel="icon" href="images/Gargantua.ico" type="image/png" />
-    <!-- For Performance Improvements -->
-    <link crossorigin rel="preload" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap"
-        as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-        crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.11.0/devicon.min.css"
-        integrity="sha512-QVvV1k8iL0nu9XAzMIR11N8swkeXyG5nKSnV595s+OVjI4JM8JLRlWfaDZ8bGBGAF/K945Hux9QRIctNkUKNcQ=="
-        crossorigin="anonymous" />
-    <link rel="preload" href="styles/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/brands.min.css"
-        integrity="sha512-nS1/hdh2b0U8SeA8tlo7QblY6rY6C+MgkZIeRzJQQvMsFfMQFUKp+cgMN2Uuy+OtbQ4RoLMIlO2iF7bIEY3Oyg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
-    <link href="styles/styles.css" rel="stylesheet" />
-    <script src="scripts/projects.js" defer></script>
-    <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" />
-        <link crossorigin="anonymous"
-            integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
-            rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.14.0/devicon-base.min.css"
-            integrity="sha512-QBmAN0VX1lfrhdUcl92KLv3Rxm2NJmAWsGrQd6vnfXExmMLq6MTCmBzeKRqvQ8HczAW3VkUHE5/WKhKObmXTbw=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link href="styles/bootstrap.min.cs" rel="stylesheet" />
-    </noscript>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tejeshwar Reddy Devalapalli - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .nav {
+            background: #34495e;
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav a:hover {
+            background: #2c3e50;
+        }
+
+        .content {
+            padding: 2rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item i {
+            color: #3498db;
+            width: 20px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            background: #f9f9f9;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card p {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .project-links a:hover {
+            background: #2980b9;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-link:hover {
+            color: #2980b9;
+        }
+
+        .loading {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                box-shadow: none;
+            }
+
+            .header {
+                padding: 1.5rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .nav {
+                padding: 0.5rem;
+            }
+
+            .nav a {
+                display: block;
+                margin: 0.2rem 0;
+            }
+
+            .content {
+                padding: 1rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div id="mobile-menu-open" class="shadow-large">
-        <i class="fa fa-bars" aria-hidden="true"></i>
-    </div>
-    <nav>
-        <header>
-            <div id="mobile-menu-close">
-                <i class="fa fa-window-close shadow-large" aria-hidden="true"></i>
-            </div>
-            <ul id="menu" class="shadow">
-                <li>
-                    <a href="#about">About</a>
-                </li>
-                <li>
-                    <a href="#experience">Experience</a>
-                </li>
-                <li>
-                    <a href="#skills">Skills</a>
-                </li>
-                <li>
-                    <a href="#education">Education</a>
-                </li>
-                <li>
-                    <a href="#projects">Projects</a>
-                </li>
-                <li>
-                    <a href="#links">Links</a>
-                </li>
-            </ul>
-        </header>
-    </nav>
-    <section id="lead">
-        <div id="lead-content">
-            <img id="me" src="https://avatars.githubusercontent.com/u/67092102?v=4" alt="Me" />
-            <h2>______________________________________</h2>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
             <h1>Tejeshwar Reddy Devalapalli</h1>
-            <h2><u> epicman25 </u></h2>
-            <h2>
-                I'm
-                <span class="typewriter" data-period="2000" data-type='
-            ["a Software Craftsperson.",
-            "a Passion Driven Developer.",
-            "a Backend Developer.",
-            "glad to see you here :D",
-            "a Learner.", "a Maker.",
-            "an Explorer.",
-            "a Problem Solver.",
-            "in permanent beta :P",
-            "hoping you send me a Hi! :)"]'>
-                    <span class="wrap"></span>
-                </span>
-            </h2>
-            <nav class="social">
-                <ul>
-                    <li>
-                        <a href="mailto:tejeshwarreddydevalapalli@gmail.com" target="_blank" rel="noopener">
-                            <i class="fa fa-envelope" aria-hidden="true" title="Tejeshwar's Mail"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/epicman25" target="_blank" rel="noopener">
-                            <i class="fab fa-github" aria-hidden="true" title="Tejeshwar's GitHub Profile"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.linkedin.com/in/devalapallitejeshwarreddy/" target="_blank" rel="noopener">
-                            <i class="fab fa-linkedin" aria-hidden="true" title="Tejeshwar's Linkedin Profile"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://twitter.com/ep1cman25" target="_blank" rel="noopener">
-                            <i class="fab fa-twitter" aria-hidden="true" title="Tejeshwar's Twitter/X Profile"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.reddit.com/user/ep1cman25" target="_blank" rel="noopener">
-                            <i class="fab fa-reddit" aria-hidden="true" title="Tejeshwar's Reddit Profile"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://discordapp.com/users/745152143761080432" target="_blank" rel="noopener">
-                            <i class="fab fa-discord" aria-hidden="true" title="Tejeshwar's Discord Profile"></i>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+            <p>Software Developer & Tech Enthusiast</p>
         </div>
-        <div id="lead-overlay"></div>
-        <div id="lead-down">
-            <span>
-                <i class="fa fa-chevron-down" aria-hidden="true" title="More"></i>
-            </span>
-        </div>
-    </section>
-    <section id="about">
-        <h2 class="heading">About Me</h2>
-        <p>
-            Hi visitor, Tejeshwar here, Welcome to my little space on the internet. I am a passionate software
-            developer and a problem solver in permanent beta.Currently working as Associate Engineer in SwissRe.Have a habit of building backend using python
-            frameworks in my free time. Learning new things, making stuff, and exploring technology is my passion.<br />
-            <br />
-            Feel free to
-            <a href="mailto:tejeshwarreddydevalapalli@gmail.com" target="_blank" rel="noopener">shoot me a mail</a>
-            if anything here managed to catch your attention.
-        </p>
-    </section>
-    <section id="experience" class="background-alt">
-        <h2 class="heading">Experience</h2>
-        <div id="experience-timeline">
-            <div data-date="June 2023 – Present" class="shadow">
-                <h3>SwissRe Global Business Solutions Pvt Ltd</h3>
-                <h4>Associate Engineer</h4>
-                Working in a <strong>Backend Developer</strong> role implementing solutions for the needs of a claims and disaster insights tool.
-                <ul>
-                    <li>Performed data engineering tasks, writing complex SQL and KQL queries to support data analysis and 
-                        reporting</li>
-                    <li>
-                        Built and optimized multiple ETL pipelines using <strong>Azure Data Factory</strong>for feature development in a claims management application
-                    </li>
-                    <li>Aggregated and analysed large datasets in <strong>Azure Data Explorer</strong> using <strong>KQL</strong>  for improved insights</li>
-                    <li>Developed and maintained stored procedures and SQL functions in SQL Server to streamline data 
-                        operations</li>
-                    <li>Collaborated within an Agile team, contributing to sprint planning, development, and review sessions for 
-                        continuous improvement</li>
-                    </li>
-                </ul>
-            </div>
-            <div data-date="January 2023 – May 2023" class="shadow">
-                <h3>SwissRe Global Business Solutions Pvt Ltd</h3>
-                <h4>Campus Intern</h4>
-                Worked in a <strong>GeoSpatial Data</strong> team to implement the analytical solutions.
-                <ul>
-                    <li>
-                        Written <strong>Python</strong> scripts to automate the extraction, transformation and loading of the geo spatial data on <strong>azure data bricks</strong>.
-                    </li>
-                    <li>Built pipelines to achieve efficient processing of Geospatial data on <strong>Azure Data Factory</strong></li>
-                    <li>Implemented STACAPI for the metadata extraction and searching of the Geospatial data.</li>
-                </ul>
-            </div>
-            <div data-date="March 2022 – August 2022" class="shadow">
-                <h3>Healthyverse</h3>
-                <h4>Backend Developer</h4>
-                Wroked in a <strong>Backend</strong> role implementing solutions for the needs of a startup.
-                <ul>
-                    <li>
-                        Developed several API's using <strong>Python framework</strong> called
-                        <strong>FastAPI</strong>
-                    </li>
-                    <li>Integrated <strong>Firebase</strong> JWT services for user authentication.</li>
-                    <li>Wrote API's for handling media files stored in Azure Blob storage.</li>
-                    <li>Migrated code from github projects to Azure</li>
-                    <li>
-                        Wrote extensive tests for almost all production code, followed best practices for clean
-                        code.
-                    </li>
-                </ul>
-            </div>
-            <div data-date="July 2021 – July 2022" class="shadow">
-                <h3>CodeChef SRMAP Chapter</h3>
-                <h4>Executive Member</h4>
-                <ul>
-                    <li>
-                        Introduced competetive programming to the students in the university and formed a community
-                        for programming enthusiasts.
-                    </li>
-                    <li>
-                        Got to interact with students across the verious chapters and got to learn about the
-                        different aspects of programming.
-                    </li>
-                    <li>
-                        Raise awareness among students about the importance of clean code and open source software.
-                    </li>
-                </ul>
-            </div>
-            <div data-date="June 2021 – July 2021" class="shadow">
-                <h3>APSSDC</h3>
-                <h4>Web Development Intern</h4>
-                <ul>
-                    <li>
-                        It was a training internship in which I learnt about full stack development using Django
-                    </li>
-                    <li>Built a web app for task management and remainders using Django. cloud.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <section id="projects" class="projects">
-        <h2 class="heading">Projects</h2>
-        <p>Some useful, some stupid, all fun!</p>
-        <section class="repos">
-            <input type="text" class="filter-repos hide" placeholder="Search Projects" />
-            <ul class="repo-list"></ul>
-        </section>
-    </section>
-    <section id="education" accesskey="r">
-        <h2 class="heading">Education</h2>
-        <div class="education-block shadow">
-            <h3><a href="https://srmap.edu.in/" target="_blank">SRM University,Andhra Pradesh</a></h3>
-            <span class="education-date"> August 2019 - May 2023</span>
-            <h4>Bachelor of Technology in Computer Science & Engineering</h4>
-            <ul>
-                <li>
-                    Spent most of my time self-learning, doing Open-Source projects, problem-solving, and learning
-                    new technologies.
-                </li>
-                <li>
-                    Learned about core CS concepts like Data Structures, Algorithms, Operating Systems, Databases,
-                    Networking etc.
-                </li>
-                <li>Graduated in Computer Science and Engineering, with a CGPA of 9.05/10.</li>
-            </ul>
-        </div>
-        <!-- End .education-block -->
-        <div class="education-block shadow">
-            <h3>Sri Chaitanya Junior College</h3>
-            <span class="education-date"> 2017 - 2019</span>
-            <h4>Higher Secondary</h4>
-            <ul>
-                <li>Graduated Higher Secondary with Maths, Physics, Chemistry, with a CGPA of 9.88/10</li>
-            </ul>
-        </div>
-        <!-- End .education-block -->
-    </section>
-    <section id="skills">
-        <h2 class="heading">Skills</h2>
-        <p>
-            I consider myself a tech agnostic developer and can easily pickup new skills depending on the task,
-            these are some of the tools that I have worked with over the years.
-        </p>
-        <ul>
-            <li>
-                <a href="https://github.com/epicman25?tab=repositories&q=&language=python" target="_blank"
-                    rel="noopener"><i class="devicon-python-plain colored" style="color: #3472a6"></i> Python</a>
-            </li>
-            <li>
-                <a href="https://github.com/epicman25?tab=repositories&q=&language=python" target="_blank"
-                    rel="noopener"><i class="devicon-fastapi-plain" style="color: #3472a6"></i> FastAPI</a>
-            </li>
-            <li>
-                <a href="https://github.com/epicman25?tab=repositories&q=&language=python" target="_blank"
-                    rel="noopener"><i class="devicon-django-plain" style="color: #3472a6"></i> Django</a>
-            </li>
-            <li>
-                <a href="https://github.com/epicman25?tab=repositories&q=&language=c" target="_blank" rel="noopener"><i
-                        class="devicon-c-plain colored"></i> C</a>
-            </li>
-            <li>
-                <a href="https://github.com/epicman25?tab=repositories&q=&language=c%2B%2B" target="_blank"
-                    rel="noopener"><i class="devicon-cplusplus-plain colored"></i> C++</a>
-            </li>
-            <li>
-                <a href="https://github.com/epicman25?tab=repositories&q=&language=shell" target="_blank"
-                    rel="noopener"><i class="devicon-bash-plain colored" style="color: #89e051"></i> Shell</a>
-            </li>
-            <li>
-                <a href="https://github.com/epicman25?tab=repositories&q=&language=go" target="_blank" rel="noopener"><i
-                        class="devicon-go-plain colored" style="color: #2ad2e4"></i> Go</a>
-            </li>
-            <li>
-                <a href="https://github.com/epicman25?tab=repositories&q=&language=python" target="_blank"
-                    rel="noopener"><i class="devicon-flask-original"></i> Flask</a>
-            </li>
 
-            <li><i class="fab fa-markdown"></i> Markdown</li>
-            <li>
-                <a href="https://github.com/epicman25?tab=repositories&q=&language=html" target="_blank"
-                    rel="noopener"><i class="devicon-html5-plain colored"></i> HTML</a>
-            </li>
-            <li>
-                <a href="https://github.com/epicman25?tab=repositories&q=&language=css" target="_blank"
-                    rel="noopener"><i class="devicon-css3-plain colored"></i> CSS</a>
-            </li>
-            <li>
-                <a href="https://github.com/epicman25?tab=repositories&q=&language=css" target="_blank"
-                    rel="noopener"><i class="devicon-bootstrap-plain colored"></i> Bootstrap</a>
-            </li>
-            <li>
-                <a href="https://github.com/epicman25?tab=repositories&q=&language=css" target="_blank"
-                    rel="noopener"><i class="devicon-firebase-plain colored"></i> Firebase</a>
-            </li>
-            <li>
-                <a href="https://github.com/epicman25?tab=repositories&q=&language=css" target="_blank"
-                    rel="noopener"><i class="devicon-azure-plain colored"></i> Azure</a>
-            </li>
-            <li>
-                <a href="https://github.com/epicman25?tab=repositories&q=&language=plsql" target="_blank"
-                    rel="noopener"><i class="devicon-mysql-plain colored"></i> MySQL</a>
-            </li>
-            <li>
-                <a href="https://github.com/epicman25?tab=repositories&q=&language=plsql" target="_blank"
-                    rel="noopener"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</a>
-            </li>
-            <li><i class="devicon-mongodb-plain colored"></i> MongoDB</li>
-            <li>
-                <a href="https://github.com/epicman25?tab=repositories&q=&language=shell" target="_blank"
-                    rel="noopener"><i class="devicon-linux-plain"></i> Linux</a>
-            </li>
-            <li>
-                <a href="https://github.com/epicman25?tab=repositories&q=&language=dockerfile" target="_blank"
-                    rel="noopener"><i class="devicon-docker-plain colored"></i> Docker</a>
-            </li>
-            <li><i class="devicon-amazonwebservices-plain colored"></i> AWS</li>
-            <li><i class="devicon-heroku-plain colored"></i> Heroku</li>
-            <li>
-                <a href="https://github.com/epicman25?tab=repositories&q=&language=jupyter+notebook" target="_blank"
-                    rel="noopener"><i class="devicon-jupyter-plain colored"></i> Jupyter</a>
-            </li>
-            <li>
-                <a href="https://github.com/epicman25?tab=repositories&q=&language=jupyter+notebook" target="_blank"
-                    rel="noopener"><i class="devicon colored"></i> KQL</a>
-            </li>
-            <li>
-                <a href="https://github.com/epicman25?tab=repositories&q=&language=jupyter+notebook" target="_blank"
-                    rel="noopener"><i class="devicon colored"></i> Azure Data Factory</a>
-            </li>
-            <li><i class="devicon-visualstudio-plain" style="color: #21a0eb"></i> VS Code</li>
-            <li><i class="devicon-git-plain colored"></i> Git</li>
-            <li><i class="devicon-googlecloud-plain colored"></i> Google Cloud</li>
-        </ul>
-    </section>
-    <section id="links" class="links">
-        <h2 class="heading">Links</h2>
-        <p>You can find me here on internet</p>
-        <section class="links">
-            <input type="text" class="filter-links hide" placeholder="Search Links" />
-            <ul class="link-list"></ul>
-        </section>
-    </section>
-    <footer>
-        <div class="top">
-            <span id="to-top">
-                <i class="fa fa-chevron-up" aria-hidden="true" title="Top"></i>
-            </span>
+        <!-- Navigation -->
+        <div class="nav">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
         </div>
-        <div class="copyright">
-            <p>Inspired by <a target="_blank" href="https://github.com/2kabhishek">2KAbhishek</a></p>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- About Section -->
+            <section id="about" class="section">
+                <h2>About Me</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>tejeshwarreddydevalapalli@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Hyderabad, India</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <span>github.com/epicman25</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <span>linkedin.com/in/devalapallitejeshwarreddy</span>
+                    </div>
+                </div>
+                <p>
+                    Passionate software developer with expertise in full-stack development. Love building innovative
+                    solutions and
+                    exploring new technologies. Currently focused on backend development with Python, Azure cloud
+                    services, and data engineering.
+                    I enjoy solving complex problems and contributing to open source projects.
+                </p>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="section">
+                <h2>Professional Experience</h2>
+
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="color: #2c3e50; margin-bottom: 0.5rem;">Associate Engineer</h3>
+                    <p style="color: #666; margin-bottom: 1rem;"><strong>SwissRe Global Business Solutions Pvt
+                            Ltd</strong> | June 2023 – Present</p>
+                    <ul style="margin-left: 2rem;">
+                        <li>Performed data engineering tasks, writing complex SQL and KQL queries for data analysis and
+                            reporting</li>
+                        <li>Built and optimized multiple ETL pipelines using Azure Data Factory for feature development
+                        </li>
+                        <li>Aggregated and analyzed large datasets in Azure Data Explorer using KQL for improved
+                            insights</li>
+                        <li>Developed stored procedures and SQL functions in SQL Server to streamline data operations
+                        </li>
+                        <li>Collaborated within Agile teams for sprint planning and continuous improvement</li>
+                    </ul>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="color: #2c3e50; margin-bottom: 0.5rem;">Campus Intern</h3>
+                    <p style="color: #666; margin-bottom: 1rem;"><strong>SwissRe Global Business Solutions Pvt
+                            Ltd</strong> | January 2023 – May 2023</p>
+                    <ul style="margin-left: 2rem;">
+                        <li>Written Python scripts to automate extraction, transformation and loading of geospatial data
+                            on Azure Databricks</li>
+                        <li>Built pipelines for efficient processing of Geospatial data on Azure Data Factory</li>
+                        <li>Implemented STACAPI for metadata extraction and searching of Geospatial data</li>
+                    </ul>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="color: #2c3e50; margin-bottom: 0.5rem;">Backend Developer</h3>
+                    <p style="color: #666; margin-bottom: 1rem;"><strong>Healthyverse</strong> | March 2022 – August
+                        2022</p>
+                    <ul style="margin-left: 2rem;">
+                        <li>Developed several APIs using Python FastAPI framework</li>
+                        <li>Integrated Firebase JWT services for user authentication</li>
+                        <li>Wrote APIs for handling media files stored in Azure Blob storage</li>
+                        <li>Migrated code from GitHub projects to Azure</li>
+                        <li>Wrote extensive tests for production code following clean code best practices</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="section">
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Programming Languages</h3>
+                        <div class="skill-item">
+                            <i class="devicon-python-plain colored"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-c-plain colored"></i>
+                            <span>C/C++</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-go-plain colored"></i>
+                            <span>Go</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-bash-plain colored"></i>
+                            <span>Shell</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Frameworks & Libraries</h3>
+                        <div class="skill-item">
+                            <i class="devicon-fastapi-plain"></i>
+                            <span>FastAPI</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-django-plain colored"></i>
+                            <span>Django</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-flask-original"></i>
+                            <span>Flask</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Databases</h3>
+                        <div class="skill-item">
+                            <i class="devicon-postgresql-plain colored"></i>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-mysql-plain colored"></i>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-mongodb-plain colored"></i>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Cloud & Tools</h3>
+                        <div class="skill-item">
+                            <i class="devicon-azure-plain colored"></i>
+                            <span>Microsoft Azure</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-docker-plain colored"></i>
+                            <span>Docker</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-git-plain colored"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-linux-plain"></i>
+                            <span>Linux</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="section">
+                <h2>Projects</h2>
+                <p class="loading">Loading projects from GitHub...</p>
+                <div id="projects-container" class="projects-grid"></div>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education" class="section">
+                <h2>Education</h2>
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="color: #2c3e50; margin-bottom: 0.5rem;">Bachelor of Technology in Computer Science &
+                        Engineering</h3>
+                    <p style="color: #666; margin-bottom: 1rem;"><strong>SRM University, Andhra Pradesh</strong> |
+                        August 2019 - May 2023</p>
+                    <p>CGPA: 9.05/10</p>
+                    <ul style="margin-left: 2rem; margin-top: 1rem;">
+                        <li>Focused on core CS concepts: Data Structures, Algorithms, Operating Systems, Databases,
+                            Networking</li>
+                        <li>Spent significant time on self-learning, open-source projects, and new technologies</li>
+                        <li>Active in competitive programming and technical communities</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 style="color: #2c3e50; margin-bottom: 0.5rem;">Higher Secondary</h3>
+                    <p style="color: #666; margin-bottom: 1rem;"><strong>Sri Chaitanya Junior College</strong> | 2017 -
+                        2019</p>
+                    <p>CGPA: 9.88/10 (Maths, Physics, Chemistry)</p>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section">
+                <h2>Get In Touch</h2>
+                <p>I'm always interested in new opportunities and collaborations. Feel free to reach out!</p>
+                <div class="social-links">
+                    <a href="mailto:tejeshwarreddydevalapalli@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email</span>
+                    </a>
+                    <a href="https://github.com/epicman25" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://linkedin.com/in/devalapallitejeshwarreddy" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://twitter.com/ep1cman25" target="_blank" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter</span>
+                    </a>
+                    <a href="https://drive.google.com/file/d/10BDiv8rG13wEHyyQN7auTBoqSllLbC5n/view?usp=sharing"
+                        target="_blank" class="social-link">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>Resume</span>
+                    </a>
+                </div>
+            </section>
         </div>
-    </footer>
+    </div>
+
     <script>
-        var isIE = !!window.MSInputMethodContext && !!document.documentMode;
-        var isFirefox = navigator.userAgent.toLowerCase().indexOf("firefox") > -1;
-        if (isIE || isFirefox) {
-            var font = document.createElement("link");
-            font.rel = "stylesheet";
-            font.type = "text/css";
-            font.href = "https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap";
-            document.head.appendChild(font);
-            var fontAwesome = document.createElement("link");
-            fontAwesome.rel = "stylesheet";
-            fontAwesome.type = "text/css";
-            fontAwesome.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css";
-            document.head.appendChild(fontAwesome);
-            var devicon = document.createElement("link");
-            devicon.rel = "stylesheet";
-            devicon.type = "text/css";
-            devicon.href = "https://cdnjs.cloudflare.com/ajax/libs/devicon/2.4/devicon.min.css";
-            document.head.append(devicon);
-            var bootstrap = document.createElement("link");
-            bootstrap.rel = "stylesheet";
-            bootstrap.type = "text/css";
-            bootstrap.href = "https://cdnjs.cloudflare.com/ajax/libs/devicon/2.4/devicon.min.css";
-            document.head.append(bootstrap);
+        // Simple script to fetch and display GitHub projects
+        const username = 'epicman25';
+        const projectsContainer = document.getElementById('projects-container');
+        const loadingText = document.querySelector('.loading');
+
+        async function fetchProjects() {
+            try {
+                const response = await fetch(`https://api.github.com/users/${username}/repos?sort=pushed&per_page=12`);
+                const repos = await response.json();
+
+                loadingText.style.display = 'none';
+
+                repos.forEach(repo => {
+                    const projectCard = document.createElement('div');
+                    projectCard.className = 'project-card';
+
+                    projectCard.innerHTML = `
+                        <h3>${repo.name}</h3>
+                        <p>${repo.description || 'No description available'}</p>
+                        <div class="project-links">
+                            <a href="${repo.html_url}" target="_blank">
+                                <i class="fab fa-github"></i>
+                                View Code
+                            </a>
+                            ${repo.homepage ? `<a href="${repo.homepage}" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                Live Demo
+                            </a>` : ''}
+                        </div>
+                        ${repo.language ? `<p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">
+                            <i class="fas fa-code"></i> ${repo.language}
+                        </p>` : ''}
+                    `;
+
+                    projectsContainer.appendChild(projectCard);
+                });
+            } catch (error) {
+                console.error('Error fetching projects:', error);
+                loadingText.textContent = 'Error loading projects. Please try again later.';
+            }
         }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Load projects when page loads
+        document.addEventListener('DOMContentLoaded', fetchProjects);
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="scripts/scripts.min.js"></script>
 </body>
 
 </html>
