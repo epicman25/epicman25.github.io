@@ -629,7 +629,9 @@
                     const cachedResponse = await fetch('./projects-data.json');
                     if (cachedResponse.ok) {
                         projects = await cachedResponse.json();
-                        console.log('Using cached project data');
+                        // Filter to only show projects with RESUME.md (those with bullet points)
+                        projects = projects.filter(project => project.bulletPoints && project.bulletPoints.length > 0);
+                        console.log(`Using cached project data (${projects.length} projects with RESUME.md)`);
                         loadingText.style.display = 'none';
                         displayProjects(projects);
                         return;
@@ -657,7 +659,7 @@
                 loadingText.style.display = 'none';
 
                 // Process repos with throttling to avoid rate limiting
-                const projectPromises = repos.slice(0, 8).map(async (repo, index) => {
+                const projectPromises = repos.slice(0, 20).map(async (repo, index) => {
                     // Add delay between requests to avoid hitting rate limits
                     await new Promise(resolve => setTimeout(resolve, index * 100));
                     let projectData = {
@@ -667,7 +669,8 @@
                         homepage: repo.homepage,
                         language: repo.language,
                         techStack: '',
-                        bulletPoints: []
+                        bulletPoints: [],
+                        hasResume: false
                     };
 
                     // Try to fetch RESUME.md for project description
@@ -679,6 +682,7 @@
                         }
 
                         if (resumeResponse.ok) {
+                            projectData.hasResume = true;
                             const resumeData = await resumeResponse.json();
                             const resumeContent = atob(resumeData.content);
 
@@ -703,7 +707,7 @@
                     } catch (resumeError) {
                         // If rate limited or error, fall back to repo description
                         if (resumeError.message?.includes('403')) {
-                            console.warn(`Rate limited fetching RESUME.md for ${repo.name}, using repo description`);
+                            console.warn(`Rate limited fetching RESUME.md for ${repo.name}, skipping`);
                         } else {
                             console.warn(`Could not fetch RESUME.md for ${repo.name}:`, resumeError.message);
                         }
@@ -712,7 +716,10 @@
                     return projectData;
                 });
 
-                projects = await Promise.all(projectPromises);
+                const allProjects = await Promise.all(projectPromises);
+                // Filter to only include projects that have RESUME.md files
+                projects = allProjects.filter(project => project.hasResume && project.bulletPoints.length > 0);
+                console.log(`Found ${projects.length} projects with RESUME.md files out of ${allProjects.length} repositories`);
                 displayProjects(projects);
 
             } catch (error) {

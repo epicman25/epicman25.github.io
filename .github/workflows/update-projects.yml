@@ -43,9 +43,10 @@ jobs:
             
             projects_data = []
             
-            # Process first 12 repos
-            for repo in repos[:12]:
+            # Process first 20 repos and filter for those with RESUME.md
+            for repo in repos[:20]:
                 print(f"Processing {repo['name']}...")
+                has_resume = False
                 project_data = {
                     'name': repo['name'],
                     'description': repo['description'],
@@ -63,6 +64,7 @@ jobs:
                         content_response = requests.get(content_url, headers=headers)
                         
                         if content_response.status_code == 200:
+                            has_resume = True
                             content_data = content_response.json()
                             resume_content = base64.b64decode(content_data['content']).decode('utf-8')
                             
@@ -89,7 +91,13 @@ jobs:
                         print(f"  Could not fetch {filename}: {e}")
                         continue
                 
-                projects_data.append(project_data)
+                # Only add projects that have RESUME.md files
+                if has_resume:
+                    projects_data.append(project_data)
+                    print(f"  ✓ Added {repo['name']} to projects list")
+                else:
+                    print(f"  ✗ Skipped {repo['name']} (no RESUME.md found)")
+                
                 time.sleep(0.1)  # Small delay to be nice to API
             
             return projects_data

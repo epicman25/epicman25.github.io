@@ -1,7 +1,7 @@
 [
   {
     "name": "epicman25.github.io",
-    "description": "My personal space (Portfolio)\ud83d\udda4\ud83c\udf10",
+    "description": "My personal space (Portfolio)🖤🌐",
     "html_url": "https://github.com/epicman25/epicman25.github.io",
     "homepage": "https://tejeshwar.dev/",
     "language": "HTML",
@@ -15,95 +15,5 @@
       "Modern CSS styling with Times New Roman typography and bordered layout for formal presentation",
       "JavaScript integration for real-time project data fetching and responsive mobile interactions"
     ]
-  },
-  {
-    "name": "fastapi_project_1",
-    "description": null,
-    "html_url": "https://github.com/epicman25/fastapi_project_1",
-    "homepage": null,
-    "language": "Python",
-    "techStack": "",
-    "bulletPoints": []
-  },
-  {
-    "name": "simple-blog-app",
-    "description": null,
-    "html_url": "https://github.com/epicman25/simple-blog-app",
-    "homepage": null,
-    "language": "Python",
-    "techStack": "",
-    "bulletPoints": []
-  },
-  {
-    "name": "first-project",
-    "description": null,
-    "html_url": "https://github.com/epicman25/first-project",
-    "homepage": null,
-    "language": "Python",
-    "techStack": "",
-    "bulletPoints": []
-  },
-  {
-    "name": "anylabeling",
-    "description": "Effortless AI-assisted data labeling with AI support from YOLO, Segment Anything, MobileSAM!!",
-    "html_url": "https://github.com/epicman25/anylabeling",
-    "homepage": "https://anylabeling.nrl.ai",
-    "language": null,
-    "techStack": "",
-    "bulletPoints": []
-  },
-  {
-    "name": "Software-Engineering-Project",
-    "description": "Course Project for Software Engineering\ud83d\udcda",
-    "html_url": "https://github.com/epicman25/Software-Engineering-Project",
-    "homepage": "",
-    "language": "JavaScript",
-    "techStack": "",
-    "bulletPoints": []
-  },
-  {
-    "name": "epicman25",
-    "description": "Github profile welcome page\ud83d\ude4f",
-    "html_url": "https://github.com/epicman25/epicman25",
-    "homepage": "https://github.com/epicman25",
-    "language": null,
-    "techStack": "",
-    "bulletPoints": []
-  },
-  {
-    "name": "Deceptive-Image--inator",
-    "description": "Course Project for Cryptography\ud83d\udd12",
-    "html_url": "https://github.com/epicman25/Deceptive-Image--inator",
-    "homepage": "https://github.com/epicman25/Deceptive-Image--inator",
-    "language": "Python",
-    "techStack": "",
-    "bulletPoints": []
-  },
-  {
-    "name": "video-compresser",
-    "description": "A simple video handling application\ud83d\udcf9",
-    "html_url": "https://github.com/epicman25/video-compresser",
-    "homepage": "https://video-sur-system.herokuapp.com/docs",
-    "language": "Python",
-    "techStack": "",
-    "bulletPoints": []
-  },
-  {
-    "name": "SSL-Scoket-Wrapper",
-    "description": "Course Project for Network Security\ud83d\udd12",
-    "html_url": "https://github.com/epicman25/SSL-Scoket-Wrapper",
-    "homepage": "",
-    "language": "Python",
-    "techStack": "",
-    "bulletPoints": []
-  },
-  {
-    "name": "Django-NoteMaking-App",
-    "description": "Simple Django applcation for note taking\ud83d\uddd2\ud83d\udcd4",
-    "html_url": "https://github.com/epicman25/Django-NoteMaking-App",
-    "homepage": "",
-    "language": "Python",
-    "techStack": "",
-    "bulletPoints": []
   }
 ]
