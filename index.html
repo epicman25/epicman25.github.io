@@ -622,16 +622,53 @@
 
         async function fetchProjects() {
             try {
-                const response = await fetch(`https://api.github.com/users/${username}/repos?sort=pushed&per_page=12`);
-                const repos = await response.json();
+                let projects = [];
 
+                // First try to load from cached data file
+                try {
+                    const cachedResponse = await fetch('./projects-data.json');
+                    if (cachedResponse.ok) {
+                        projects = await cachedResponse.json();
+                        console.log('Using cached project data');
+                        loadingText.style.display = 'none';
+                        displayProjects(projects);
+                        return;
+                    }
+                } catch (cachedError) {
+                    console.log('No cached data found, fetching from GitHub API');
+                }
+
+                // Fallback to GitHub API
+                const response = await fetch(`https://api.github.com/users/${username}/repos?sort=pushed&per_page=20`);
+
+                // Check for rate limiting
+                if (response.status === 403) {
+                    const rateLimitReset = response.headers.get('X-RateLimit-Reset');
+                    const resetTime = rateLimitReset ? new Date(rateLimitReset * 1000).toLocaleTimeString() : 'later';
+                    loadingText.textContent = `GitHub API rate limit reached. Try again at ${resetTime}.`;
+                    return;
+                }
+
+                if (!response.ok) {
+                    throw new Error(`GitHub API error: ${response.status}`);
+                }
+
+                const repos = await response.json();
                 loadingText.style.display = 'none';
 
-                // Process repos in parallel but limit to avoid rate limiting
-                const projectPromises = repos.slice(0, 8).map(async (repo) => {
-                    let projectTitle = repo.name;
-                    let techStack = '';
-                    let bulletPoints = [];
+                // Process repos with throttling to avoid rate limiting
+                const projectPromises = repos.slice(0, 8).map(async (repo, index) => {
+                    // Add delay between requests to avoid hitting rate limits
+                    await new Promise(resolve => setTimeout(resolve, index * 100));
+                    let projectData = {
+                        name: repo.name,
+                        description: repo.description,
+                        html_url: repo.html_url,
+                        homepage: repo.homepage,
+                        language: repo.language,
+                        techStack: '',
+                        bulletPoints: []
+                    };
 
                     // Try to fetch RESUME.md for project description
                     try {
@@ -651,7 +688,7 @@
                             // Find the ## heading (tech stack)
                             const techStackLine = lines.find(line => line.trim().startsWith('## '));
                             if (techStackLine) {
-                                techStack = techStackLine.replace('## ', '').trim();
+                                projectData.techStack = techStackLine.replace('## ', '').trim();
                             }
 
                             // Extract all bullet points (lines starting with - or *)
@@ -660,47 +697,54 @@
                                 .map(line => line.trim().replace(/^[-*]\s+/, ''));
 
                             if (bullets.length > 0) {
-                                bulletPoints = bullets;
+                                projectData.bulletPoints = bullets;
                             }
                         }
                     } catch (resumeError) {
-                        console.warn(`Could not fetch RESUME.md or RESUME.MD for ${repo.name}`);
+                        // If rate limited or error, fall back to repo description
+                        if (resumeError.message?.includes('403')) {
+                            console.warn(`Rate limited fetching RESUME.md for ${repo.name}, using repo description`);
+                        } else {
+                            console.warn(`Could not fetch RESUME.md for ${repo.name}:`, resumeError.message);
+                        }
                     }
 
-                    // If no RESUME.md found, bulletPoints remains empty and will fall back to repo.description
-
-                    return { repo, techStack, bulletPoints };
+                    return projectData;
                 });
 
-                const projectsData = await Promise.all(projectPromises);
+                projects = await Promise.all(projectPromises);
+                displayProjects(projects);
 
-                projectsData.forEach(({ repo, techStack, bulletPoints }) => {
-                    const projectCard = document.createElement('div');
-                    projectCard.className = 'project-card';
-
-                    const bulletsHtml = bulletPoints.length > 0
-                        ? `<ul style="margin: 8px 0 8px 20px; padding: 0;">
-                             ${bulletPoints.map(bullet => `<li style="margin-bottom: 3px;">${bullet}</li>`).join('')}
-                           </ul>`
-                        : `<p style="margin-bottom: 8px;">${repo.description || 'No description available'}</p>`;
-
-                    projectCard.innerHTML = `
-                        <h3>${repo.name}</h3>
-                        ${techStack ? `<p style="margin-bottom: 5px; font-style: italic; color: #666;"><strong>Tech Stack:</strong> ${techStack}</p>` : ''}
-                        ${bulletsHtml}
-                        <div class="project-links">
-                            <a href="${repo.html_url}" target="_blank">View Code</a>
-                            ${repo.homepage ? `<a href="${repo.homepage}" target="_blank">Live Demo</a>` : ''}
-                        </div>
-                        ${repo.language ? `<p style="margin-top: 8px; font-style: italic;">Primary Language: ${repo.language}</p>` : ''}
-                    `;
-
-                    projectsContainer.appendChild(projectCard);
-                });
             } catch (error) {
                 console.error('Error fetching projects:', error);
                 loadingText.textContent = 'Error loading projects. Please try again later.';
             }
+        }
+
+        function displayProjects(projects) {
+            projects.forEach((project) => {
+                const projectCard = document.createElement('div');
+                projectCard.className = 'project-card';
+
+                const bulletsHtml = project.bulletPoints && project.bulletPoints.length > 0
+                    ? `<ul style="margin: 8px 0 8px 20px; padding: 0;">
+                         ${project.bulletPoints.map(bullet => `<li style="margin-bottom: 3px;">${bullet}</li>`).join('')}
+                       </ul>`
+                    : `<p style="margin-bottom: 8px;">${project.description || 'No description available'}</p>`;
+
+                projectCard.innerHTML = `
+                    <h3>${project.name}</h3>
+                    ${project.techStack ? `<p style="margin-bottom: 5px; font-style: italic; color: #666;"><strong>Tech Stack:</strong> ${project.techStack}</p>` : ''}
+                    ${bulletsHtml}
+                    <div class="project-links">
+                        <a href="${project.html_url}" target="_blank">View Code</a>
+                        ${project.homepage ? `<a href="${project.homepage}" target="_blank">Live Demo</a>` : ''}
+                    </div>
+                    ${project.language ? `<p style="margin-top: 8px; font-style: italic;">Primary Language: ${project.language}</p>` : ''}
+                `;
+
+                projectsContainer.appendChild(projectCard);
+            });
         }
 
         // Load projects when page loads

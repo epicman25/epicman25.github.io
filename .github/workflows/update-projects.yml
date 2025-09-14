@@ -1,0 +1,124 @@
+name: Update Projects Data
+
+on:
+  schedule:
+    # Run daily at 6 AM UTC
+    - cron: '0 6 * * *'
+  workflow_dispatch: # Allow manual trigger
+  push:
+    branches: [ master, main ]
+    paths:
+      - 'RESUME.md'  # Trigger when you add RESUME.md to projects
+
+jobs:
+  update-projects:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Fetch and process GitHub projects
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        # Create the projects data script
+        cat > fetch_projects.py << 'EOF'
+        import requests
+        import json
+        import base64
+        import time
+        import os
+        
+        def fetch_projects():
+            username = 'epicman25'
+            token = os.environ.get('GITHUB_TOKEN')
+            headers = {'Authorization': f'token {token}'} if token else {}
+            
+            # Fetch repositories
+            repos_url = f'https://api.github.com/users/{username}/repos?sort=pushed&per_page=20'
+            response = requests.get(repos_url, headers=headers)
+            response.raise_for_status()
+            repos = response.json()
+            
+            projects_data = []
+            
+            # Process first 12 repos
+            for repo in repos[:12]:
+                print(f"Processing {repo['name']}...")
+                project_data = {
+                    'name': repo['name'],
+                    'description': repo['description'],
+                    'html_url': repo['html_url'],
+                    'homepage': repo['homepage'],
+                    'language': repo['language'],
+                    'techStack': '',
+                    'bulletPoints': []
+                }
+                
+                # Try to fetch RESUME.md
+                for filename in ['RESUME.md', 'RESUME.MD']:
+                    try:
+                        content_url = f"https://api.github.com/repos/{username}/{repo['name']}/contents/{filename}"
+                        content_response = requests.get(content_url, headers=headers)
+                        
+                        if content_response.status_code == 200:
+                            content_data = content_response.json()
+                            resume_content = base64.b64decode(content_data['content']).decode('utf-8')
+                            
+                            lines = resume_content.split('\n')
+                            
+                            # Find tech stack (## heading)
+                            for line in lines:
+                                if line.strip().startswith('## '):
+                                    project_data['techStack'] = line.replace('## ', '').strip()
+                                    break
+                            
+                            # Extract bullet points
+                            bullets = []
+                            for line in lines:
+                                line = line.strip()
+                                if line.startswith('- ') or line.startswith('* '):
+                                    bullets.append(line[2:].strip())
+                            
+                            project_data['bulletPoints'] = bullets
+                            print(f"  Found {filename} with {len(bullets)} bullet points")
+                            break
+                            
+                    except Exception as e:
+                        print(f"  Could not fetch {filename}: {e}")
+                        continue
+                
+                projects_data.append(project_data)
+                time.sleep(0.1)  # Small delay to be nice to API
+            
+            return projects_data
+        
+        if __name__ == '__main__':
+            try:
+                projects = fetch_projects()
+                with open('projects-data.json', 'w') as f:
+                    json.dump(projects, f, indent=2)
+                print(f"Successfully processed {len(projects)} projects")
+            except Exception as e:
+                print(f"Error: {e}")
+                exit(1)
+        EOF
+        
+        # Install Python dependencies and run script
+        pip install requests
+        python fetch_projects.py
+        
+    - name: Commit and push if changed
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add projects-data.json
+        
+        # Only commit if there are changes
+        if ! git diff --staged --quiet; then
+          git commit -m "Update projects data [automated]"
+          git push
+        else
+          echo "No changes to commit"
+        fi
