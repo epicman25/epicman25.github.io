@@ -637,7 +637,12 @@
 
                     // Try to fetch RESUME.md for project description
                     try {
-                        const resumeResponse = await fetch(`https://api.github.com/repos/${username}/${repo.name}/contents/RESUME.md`);
+                        // Try both RESUME.MD and RESUME.md (case variations)
+                        let resumeResponse = await fetch(`https://api.github.com/repos/${username}/${repo.name}/contents/RESUME.MD`);
+                        if (!resumeResponse.ok) {
+                            resumeResponse = await fetch(`https://api.github.com/repos/${username}/${repo.name}/contents/RESUME.md`);
+                        }
+
                         if (resumeResponse.ok) {
                             const resumeData = await resumeResponse.json();
                             const resumeContent = atob(resumeData.content);
@@ -661,7 +666,7 @@
                             }
                         }
                     } catch (resumeError) {
-                        console.warn(`Could not fetch RESUME.md for ${repo.name}`);
+                        console.warn(`Could not fetch RESUME.MD or RESUME.md for ${repo.name}`);
                     }
 
                     // If no RESUME.md found, bulletPoints remains empty and will fall back to repo.description
