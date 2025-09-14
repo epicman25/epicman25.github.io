@@ -4,9 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tejeshwar Reddy Devalapalli - Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <title>Tejeshwar Reddy Devalapalli - Resume</title>
     <style>
         * {
             margin: 0;
@@ -15,69 +13,45 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f7fa;
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.2;
+            color: black;
+            background-color: white;
+            padding: 15px;
+            font-size: 12pt;
         }
 
         .container {
-            max-width: 1200px;
-            margin: 2rem auto;
+            max-width: 1000px;
+            margin: 0 auto;
             background: white;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            overflow: hidden;
+            border: 2px solid black;
+            padding: 25px;
         }
 
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 3rem 2rem;
             text-align: center;
+            border-bottom: 2px solid black;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 300;
+            font-size: 24pt;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-transform: uppercase;
         }
 
         .header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        .nav {
-            background: #34495e;
-            padding: 1rem;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            margin: 0 0.5rem;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-
-        .nav a:hover {
-            background: #2c3e50;
-        }
-
-        .content {
-            padding: 2rem;
+            font-size: 14pt;
+            margin-bottom: 10px;
         }
 
         .section {
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #eee;
+            margin-bottom: 20px;
+            border-bottom: 1px solid black;
+            padding-bottom: 12px;
         }
 
         .section:last-child {
@@ -85,394 +59,561 @@
         }
 
         .section h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
+            font-size: 16pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            border-bottom: 1px solid black;
+            padding-bottom: 3px;
         }
 
         .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
         }
 
         .contact-item {
+            margin-bottom: 3px;
+        }
+
+        a {
+            color: black;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        .job-title {
+            font-weight: bold;
+            font-size: 14pt;
+            margin-bottom: 3px;
+        }
+
+        .company-info {
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+
+        .job-description {
+            margin-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        .job-description ul {
+            margin-left: 20px;
+        }
+
+        .job-description li {
+            margin-bottom: 2px;
+        }
+
+        .skills-section {
             display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            flex-wrap: wrap;
+            gap: 40px;
         }
 
-        .contact-item i {
-            color: #3498db;
-            width: 20px;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+        .skill-category {
+            flex: 1;
+            min-width: 220px;
         }
 
         .skill-category h3 {
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            border-bottom: 1px solid #3498db;
-            padding-bottom: 0.5rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-decoration: underline;
         }
 
-        .skill-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
+        .skill-list {
+            margin-left: 15px;
+            line-height: 1.3;
         }
 
         .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            margin-top: 10px;
         }
 
         .project-card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 1.5rem;
-            background: #f9f9f9;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid black;
+            padding: 8px;
+            margin-bottom: 10px;
         }
 
         .project-card h3 {
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
+            font-weight: bold;
+            margin-bottom: 3px;
         }
 
         .project-card p {
-            margin-bottom: 1rem;
-            color: #666;
+            margin-bottom: 5px;
         }
 
         .project-links {
-            display: flex;
-            gap: 1rem;
+            margin-top: 5px;
         }
 
         .project-links a {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: #3498db;
-            color: white;
             text-decoration: none;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            transition: background-color 0.3s;
+            color: black;
+            margin-right: 15px;
+            border: 1px solid black;
+            padding: 3px 8px;
+            display: inline-block;
+            margin-bottom: 5px;
         }
 
-        .project-links a:hover {
-            background: #2980b9;
+        .education-item {
+            margin-bottom: 10px;
         }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
+        .degree {
+            font-weight: bold;
+            font-size: 14pt;
         }
 
-        .social-link {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #3498db;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .social-link:hover {
-            color: #2980b9;
+        .institution {
+            font-style: italic;
+            margin-bottom: 5px;
         }
 
         .loading {
             text-align: center;
-            color: #666;
             font-style: italic;
         }
 
-        @media (max-width: 768px) {
+        .action-buttons {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .action-btn {
+            background: white;
+            border: 2px solid black;
+            color: black;
+            padding: 8px 15px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 11pt;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .action-btn:hover {
+            background: black;
+            color: white;
+        }
+
+        /* Mobile collapsible menu */
+        .mobile-menu-toggle {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            border: 2px solid black;
+            color: black;
+            padding: 10px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 16pt;
+            cursor: pointer;
+            z-index: 1001;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .mobile-menu-toggle:hover {
+            background: black;
+            color: white;
+        }
+
+        .mobile-actions {
+            display: none;
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            background: white;
+            border: 2px solid black;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .mobile-actions.show {
+            display: flex;
+        }
+
+        .mobile-actions .action-btn {
+            border-radius: 0;
+            border: none;
+            border-bottom: 1px solid black;
+            box-shadow: none;
+        }
+
+        .mobile-actions .action-btn:last-child {
+            border-bottom: none;
+        }
+
+        /* Print styles */
+        @media print {
+
+            .action-buttons,
+            .mobile-menu-toggle,
+            .mobile-actions {
+                display: none !important;
+            }
+
+            @page {
+                size: A4;
+                margin: 0.5in;
+            }
+
+            body {
+                padding: 0;
+                font-size: 11pt;
+                line-height: 1.1;
+                background: white !important;
+                color: black !important;
+            }
+
             .container {
-                margin: 0;
-                box-shadow: none;
+                border: 2px solid black !important;
+                padding: 15px !important;
+                max-width: none !important;
+                margin: 0 !important;
+                background: white !important;
+                box-shadow: none !important;
             }
 
             .header {
-                padding: 1.5rem;
+                text-align: center;
+                border-bottom: 2px solid black !important;
+                padding-bottom: 10px;
+                margin-bottom: 15px;
             }
 
             .header h1 {
-                font-size: 2rem;
+                font-size: 20pt !important;
+                margin-bottom: 3px;
             }
 
-            .nav {
-                padding: 0.5rem;
+            .header p {
+                font-size: 12pt !important;
+                margin-bottom: 8px;
             }
 
-            .nav a {
+            .contact-info {
+                display: flex !important;
+                justify-content: space-between !important;
+                flex-wrap: wrap !important;
+                margin-bottom: 10px;
+                font-size: 10pt;
+            }
+
+            .section {
+                margin-bottom: 15px !important;
+                border-bottom: 1px solid black !important;
+                padding-bottom: 8px !important;
+                page-break-inside: avoid;
+            }
+
+            .section:last-child {
+                border-bottom: none !important;
+            }
+
+            .section h2 {
+                font-size: 14pt !important;
+                margin-bottom: 6px !important;
+                border-bottom: 1px solid black !important;
+                padding-bottom: 2px;
+            }
+
+            .job-title {
+                font-size: 12pt !important;
+                margin-bottom: 2px;
+            }
+
+            .company-info {
+                margin-bottom: 3px;
+                font-size: 10pt;
+            }
+
+            .job-description {
+                margin-left: 15px;
+                margin-bottom: 8px;
+            }
+
+            .job-description ul {
+                margin-left: 15px;
+            }
+
+            .job-description li {
+                margin-bottom: 1px;
+                font-size: 10pt;
+            }
+
+            .skills-section {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                gap: 25px !important;
+            }
+
+            .skill-category {
+                flex: 1;
+                min-width: 150px;
+            }
+
+            .skill-category h3 {
+                font-size: 11pt;
+                margin-bottom: 3px;
+            }
+
+            .skill-list {
+                font-size: 10pt;
+                line-height: 1.2;
+                margin-left: 10px;
+            }
+
+            .project-card {
+                border: 1px solid black !important;
+                padding: 6px !important;
+                margin-bottom: 8px !important;
+                page-break-inside: avoid;
+            }
+
+            .project-card h3 {
+                font-size: 11pt;
+                margin-bottom: 2px;
+            }
+
+            .project-card p {
+                font-size: 10pt;
+                margin-bottom: 3px;
+            }
+
+            .project-card ul {
+                font-size: 10pt;
+                margin: 5px 0 5px 15px;
+            }
+
+            .project-card li {
+                margin-bottom: 1px;
+            }
+
+            .project-links a {
+                font-size: 9pt;
+                padding: 2px 5px;
+                margin-right: 8px;
+                border: 1px solid black !important;
+            }
+
+            .education-item {
+                margin-bottom: 8px;
+            }
+
+            .degree {
+                font-size: 12pt;
+            }
+
+            .institution {
+                font-size: 10pt;
+                margin-bottom: 3px;
+            }
+
+            .education-item ul {
+                font-size: 10pt;
+                margin-left: 15px;
+                margin-top: 3px;
+            }
+
+            .education-item li {
+                margin-bottom: 1px;
+            }
+
+            a {
+                color: black !important;
+                text-decoration: underline !important;
+            }
+
+            /* Ensure proper page breaks */
+            .section {
+                break-inside: avoid;
+            }
+
+            .project-card {
+                break-inside: avoid;
+            }
+
+            .education-item {
+                break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .action-buttons {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
                 display: block;
-                margin: 0.2rem 0;
             }
 
-            .content {
-                padding: 1rem;
+            .contact-info {
+                flex-direction: column;
+            }
+
+            .skills-section {
+                flex-direction: column;
             }
         }
     </style>
 </head>
 
 <body>
+    <!-- Desktop Action Buttons -->
+    <div class="action-buttons">
+        <button class="action-btn" onclick="window.print()">Print Resume</button>
+        <a href="https://drive.google.com/file/d/10BDiv8rG13wEHyyQN7auTBoqSllLbC5n/view" target="_blank"
+            class="action-btn">Download PDF</a>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+
+    <!-- Mobile Action Menu -->
+    <div class="mobile-actions" id="mobileActions">
+        <button class="action-btn" onclick="window.print(); toggleMobileMenu();">Print Resume</button>
+        <a href="https://drive.google.com/file/d/10BDiv8rG13wEHyyQN7auTBoqSllLbC5n/view" target="_blank"
+            class="action-btn" onclick="toggleMobileMenu();">Download PDF</a>
+    </div>
+
     <div class="container">
         <!-- Header -->
         <div class="header">
             <h1>Tejeshwar Reddy Devalapalli</h1>
             <p>Software Developer & Tech Enthusiast</p>
+            <div class="contact-info">
+                <div class="contact-item">Email: <a
+                        href="mailto:tejeshwarreddydevalapalli@gmail.com">tejeshwarreddydevalapalli@gmail.com</a></div>
+                <div class="contact-item">Location: Hyderabad, India</div>
+                <div class="contact-item">GitHub: <a href="https://github.com/epicman25" target="_blank">epicman25</a>
+                </div>
+                <div class="contact-item">LinkedIn: <a href="https://linkedin.com/in/devalapallitejeshwarreddy"
+                        target="_blank">devalapallitejeshwarreddy</a></div>
+            </div>
         </div>
 
-        <!-- Navigation -->
-        <div class="nav">
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#education">Education</a>
-            <a href="#contact">Contact</a>
-        </div>
+        <!-- About Section -->
+        <section class="section">
+            <h2>Professional Summary</h2>
+            <p>
+                Passionate software developer with expertise in full-stack development. Love building innovative
+                solutions and exploring new technologies. Currently focused on backend development with Python, Azure
+                cloud
+                services, and data engineering. I enjoy solving complex problems and contributing to open source
+                projects.
+            </p>
+        </section>
 
-        <!-- Content -->
-        <div class="content">
-            <!-- About Section -->
-            <section id="about" class="section">
-                <h2>About Me</h2>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>tejeshwarreddydevalapalli@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Hyderabad, India</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-github"></i>
-                        <span>github.com/epicman25</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <span>linkedin.com/in/devalapallitejeshwarreddy</span>
-                    </div>
-                </div>
-                <p>
-                    Passionate software developer with expertise in full-stack development. Love building innovative
-                    solutions and
-                    exploring new technologies. Currently focused on backend development with Python, Azure cloud
-                    services, and data engineering.
-                    I enjoy solving complex problems and contributing to open source projects.
-                </p>
-            </section>
+        <!-- Experience Section -->
+        <section class="section">
+            <h2>Professional Experience</h2>
 
-            <!-- Experience Section -->
-            <section id="experience" class="section">
-                <h2>Professional Experience</h2>
+            <div class="job-title">Associate Engineer</div>
+            <div class="company-info">SwissRe Global Business Solutions Pvt Ltd | June 2023 – Present</div>
+            <div class="job-description">
+                <ul>
+                    <li>Performed data engineering tasks, writing complex SQL and KQL queries for data analysis and
+                        reporting</li>
+                    <li>Built and optimized multiple ETL pipelines using Azure Data Factory for feature development</li>
+                    <li>Aggregated and analyzed large datasets in Azure Data Explorer using KQL for improved insights
+                    </li>
+                    <li>Developed stored procedures and SQL functions in SQL Server to streamline data operations</li>
+                    <li>Collaborated within Agile teams for sprint planning and continuous improvement</li>
+                </ul>
+            </div>
 
-                <div style="margin-bottom: 2rem;">
-                    <h3 style="color: #2c3e50; margin-bottom: 0.5rem;">Associate Engineer</h3>
-                    <p style="color: #666; margin-bottom: 1rem;"><strong>SwissRe Global Business Solutions Pvt
-                            Ltd</strong> | June 2023 – Present</p>
-                    <ul style="margin-left: 2rem;">
-                        <li>Performed data engineering tasks, writing complex SQL and KQL queries for data analysis and
-                            reporting</li>
-                        <li>Built and optimized multiple ETL pipelines using Azure Data Factory for feature development
-                        </li>
-                        <li>Aggregated and analyzed large datasets in Azure Data Explorer using KQL for improved
-                            insights</li>
-                        <li>Developed stored procedures and SQL functions in SQL Server to streamline data operations
-                        </li>
-                        <li>Collaborated within Agile teams for sprint planning and continuous improvement</li>
-                    </ul>
-                </div>
+            <div class="job-title">Campus Intern</div>
+            <div class="company-info">SwissRe Global Business Solutions Pvt Ltd | January 2023 – May 2023</div>
+            <div class="job-description">
+                <ul>
+                    <li>Written Python scripts to automate extraction, transformation and loading of geospatial data on
+                        Azure Databricks</li>
+                    <li>Built pipelines for efficient processing of Geospatial data on Azure Data Factory</li>
+                    <li>Implemented STACAPI for metadata extraction and searching of Geospatial data</li>
+                </ul>
+            </div>
 
-                <div style="margin-bottom: 2rem;">
-                    <h3 style="color: #2c3e50; margin-bottom: 0.5rem;">Campus Intern</h3>
-                    <p style="color: #666; margin-bottom: 1rem;"><strong>SwissRe Global Business Solutions Pvt
-                            Ltd</strong> | January 2023 – May 2023</p>
-                    <ul style="margin-left: 2rem;">
-                        <li>Written Python scripts to automate extraction, transformation and loading of geospatial data
-                            on Azure Databricks</li>
-                        <li>Built pipelines for efficient processing of Geospatial data on Azure Data Factory</li>
-                        <li>Implemented STACAPI for metadata extraction and searching of Geospatial data</li>
-                    </ul>
-                </div>
+            <div class="job-title">Backend Developer</div>
+            <div class="company-info">Healthyverse | March 2022 – August 2022</div>
+            <div class="job-description">
+                <ul>
+                    <li>Developed several APIs using Python FastAPI framework</li>
+                    <li>Integrated Firebase JWT services for user authentication</li>
+                    <li>Wrote APIs for handling media files stored in Azure Blob storage</li>
+                    <li>Migrated code from GitHub projects to Azure</li>
+                    <li>Wrote extensive tests for production code following clean code best practices</li>
+                </ul>
+            </div>
+        </section>
 
-                <div style="margin-bottom: 2rem;">
-                    <h3 style="color: #2c3e50; margin-bottom: 0.5rem;">Backend Developer</h3>
-                    <p style="color: #666; margin-bottom: 1rem;"><strong>Healthyverse</strong> | March 2022 – August
-                        2022</p>
-                    <ul style="margin-left: 2rem;">
-                        <li>Developed several APIs using Python FastAPI framework</li>
-                        <li>Integrated Firebase JWT services for user authentication</li>
-                        <li>Wrote APIs for handling media files stored in Azure Blob storage</li>
-                        <li>Migrated code from GitHub projects to Azure</li>
-                        <li>Wrote extensive tests for production code following clean code best practices</li>
-                    </ul>
-                </div>
-            </section>
+        <!-- Skills Section -->
+        <section class="section">
+            <h2>Technical Skills</h2>
+            <ul style="margin-left: 20px;">
+                <li><strong>Programming Languages:</strong> Python, C/C++, Go, Shell/Bash</li>
+                <li><strong>Frameworks & Libraries:</strong> FastAPI, Django, Flask</li>
+                <li><strong>Databases:</strong> PostgreSQL, MySQL, MongoDB</li>
+                <li><strong>Cloud & Tools:</strong> Microsoft Azure, Docker, Git, Linux</li>
+            </ul>
+        </section>
 
-            <!-- Skills Section -->
-            <section id="skills" class="section">
-                <h2>Technical Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Programming Languages</h3>
-                        <div class="skill-item">
-                            <i class="devicon-python-plain colored"></i>
-                            <span>Python</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-c-plain colored"></i>
-                            <span>C/C++</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-go-plain colored"></i>
-                            <span>Go</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-bash-plain colored"></i>
-                            <span>Shell</span>
-                        </div>
-                    </div>
+        <!-- Projects Section -->
+        <section class="section">
+            <h2>Projects</h2>
+            <p class="loading">Loading projects from GitHub...</p>
+            <div id="projects-container" class="projects-grid"></div>
+        </section>
 
-                    <div class="skill-category">
-                        <h3>Frameworks & Libraries</h3>
-                        <div class="skill-item">
-                            <i class="devicon-fastapi-plain"></i>
-                            <span>FastAPI</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-django-plain colored"></i>
-                            <span>Django</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-flask-original"></i>
-                            <span>Flask</span>
-                        </div>
-                    </div>
+        <!-- Education Section -->
+        <section class="section">
+            <h2>Education</h2>
+            <div class="education-item">
+                <div class="degree">Bachelor of Technology in Computer Science & Engineering</div>
+                <div class="institution">SRM University, Andhra Pradesh | August 2019 - May 2023</div>
+                <div>CGPA: 9.05/10</div>
+                <ul style="margin-left: 20px; margin-top: 5px;">
+                    <li>Focused on core CS concepts: Data Structures, Algorithms, Operating Systems, Databases,
+                        Networking</li>
+                    <li>Spent significant time on self-learning, open-source projects, and new technologies</li>
+                    <li>Active in competitive programming and technical communities</li>
+                </ul>
+            </div>
 
-                    <div class="skill-category">
-                        <h3>Databases</h3>
-                        <div class="skill-item">
-                            <i class="devicon-postgresql-plain colored"></i>
-                            <span>PostgreSQL</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-mysql-plain colored"></i>
-                            <span>MySQL</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-mongodb-plain colored"></i>
-                            <span>MongoDB</span>
-                        </div>
-                    </div>
+            <div class="education-item">
+                <div class="degree">Higher Secondary</div>
+                <div class="institution">Sri Chaitanya Junior College | 2017 - 2019</div>
+                <div>CGPA: 9.88/10 (Maths, Physics, Chemistry)</div>
+            </div>
+        </section>
 
-                    <div class="skill-category">
-                        <h3>Cloud & Tools</h3>
-                        <div class="skill-item">
-                            <i class="devicon-azure-plain colored"></i>
-                            <span>Microsoft Azure</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-docker-plain colored"></i>
-                            <span>Docker</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-git-plain colored"></i>
-                            <span>Git</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-linux-plain"></i>
-                            <span>Linux</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Projects Section -->
-            <section id="projects" class="section">
-                <h2>Projects</h2>
-                <p class="loading">Loading projects from GitHub...</p>
-                <div id="projects-container" class="projects-grid"></div>
-            </section>
-
-            <!-- Education Section -->
-            <section id="education" class="section">
-                <h2>Education</h2>
-                <div style="margin-bottom: 2rem;">
-                    <h3 style="color: #2c3e50; margin-bottom: 0.5rem;">Bachelor of Technology in Computer Science &
-                        Engineering</h3>
-                    <p style="color: #666; margin-bottom: 1rem;"><strong>SRM University, Andhra Pradesh</strong> |
-                        August 2019 - May 2023</p>
-                    <p>CGPA: 9.05/10</p>
-                    <ul style="margin-left: 2rem; margin-top: 1rem;">
-                        <li>Focused on core CS concepts: Data Structures, Algorithms, Operating Systems, Databases,
-                            Networking</li>
-                        <li>Spent significant time on self-learning, open-source projects, and new technologies</li>
-                        <li>Active in competitive programming and technical communities</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 style="color: #2c3e50; margin-bottom: 0.5rem;">Higher Secondary</h3>
-                    <p style="color: #666; margin-bottom: 1rem;"><strong>Sri Chaitanya Junior College</strong> | 2017 -
-                        2019</p>
-                    <p>CGPA: 9.88/10 (Maths, Physics, Chemistry)</p>
-                </div>
-            </section>
-
-            <!-- Contact Section -->
-            <section id="contact" class="section">
-                <h2>Get In Touch</h2>
-                <p>I'm always interested in new opportunities and collaborations. Feel free to reach out!</p>
-                <div class="social-links">
-                    <a href="mailto:tejeshwarreddydevalapalli@gmail.com" class="social-link">
-                        <i class="fas fa-envelope"></i>
-                        <span>Email</span>
-                    </a>
-                    <a href="https://github.com/epicman25" target="_blank" class="social-link">
-                        <i class="fab fa-github"></i>
-                        <span>GitHub</span>
-                    </a>
-                    <a href="https://linkedin.com/in/devalapallitejeshwarreddy" target="_blank" class="social-link">
-                        <i class="fab fa-linkedin"></i>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://twitter.com/ep1cman25" target="_blank" class="social-link">
-                        <i class="fab fa-twitter"></i>
-                        <span>Twitter</span>
-                    </a>
-                    <a href="https://drive.google.com/file/d/10BDiv8rG13wEHyyQN7auTBoqSllLbC5n/view?usp=sharing"
-                        target="_blank" class="social-link">
-                        <i class="fas fa-file-pdf"></i>
-                        <span>Resume</span>
-                    </a>
-                </div>
-            </section>
-        </div>
+        <!-- Contact Section -->
+        <section class="section">
+            <h2>Additional Links</h2>
+            <p><strong>Twitter:</strong> <a href="https://twitter.com/ep1cman25" target="_blank">@ep1cman25</a></p>
+            <p><strong>Resume PDF:</strong> <a
+                    href="https://drive.google.com/file/d/10BDiv8rG13wEHyyQN7auTBoqSllLbC5n/view"
+                    target="_blank">Download Resume</a></p>
+        </section>
     </div>
 
     <script>
@@ -488,26 +629,67 @@
 
                 loadingText.style.display = 'none';
 
-                repos.forEach(repo => {
+                // Process repos in parallel but limit to avoid rate limiting
+                const projectPromises = repos.slice(0, 8).map(async (repo) => {
+                    let projectTitle = repo.name;
+                    let techStack = '';
+                    let bulletPoints = [];
+
+                    // Try to fetch RESUME.md for project description
+                    try {
+                        const resumeResponse = await fetch(`https://api.github.com/repos/${username}/${repo.name}/contents/RESUME.md`);
+                        if (resumeResponse.ok) {
+                            const resumeData = await resumeResponse.json();
+                            const resumeContent = atob(resumeData.content);
+
+                            // Parse RESUME.md content
+                            const lines = resumeContent.split('\n');
+
+                            // Find the ## heading (tech stack)
+                            const techStackLine = lines.find(line => line.trim().startsWith('## '));
+                            if (techStackLine) {
+                                techStack = techStackLine.replace('## ', '').trim();
+                            }
+
+                            // Extract all bullet points (lines starting with - or *)
+                            const bullets = lines
+                                .filter(line => line.trim().match(/^[-*]\s+/))
+                                .map(line => line.trim().replace(/^[-*]\s+/, ''));
+
+                            if (bullets.length > 0) {
+                                bulletPoints = bullets;
+                            }
+                        }
+                    } catch (resumeError) {
+                        console.warn(`Could not fetch RESUME.md for ${repo.name}`);
+                    }
+
+                    // If no RESUME.md found, bulletPoints remains empty and will fall back to repo.description
+
+                    return { repo, techStack, bulletPoints };
+                });
+
+                const projectsData = await Promise.all(projectPromises);
+
+                projectsData.forEach(({ repo, techStack, bulletPoints }) => {
                     const projectCard = document.createElement('div');
                     projectCard.className = 'project-card';
 
+                    const bulletsHtml = bulletPoints.length > 0
+                        ? `<ul style="margin: 8px 0 8px 20px; padding: 0;">
+                             ${bulletPoints.map(bullet => `<li style="margin-bottom: 3px;">${bullet}</li>`).join('')}
+                           </ul>`
+                        : `<p style="margin-bottom: 8px;">${repo.description || 'No description available'}</p>`;
+
                     projectCard.innerHTML = `
                         <h3>${repo.name}</h3>
-                        <p>${repo.description || 'No description available'}</p>
+                        ${techStack ? `<p style="margin-bottom: 5px; font-style: italic; color: #666;"><strong>Tech Stack:</strong> ${techStack}</p>` : ''}
+                        ${bulletsHtml}
                         <div class="project-links">
-                            <a href="${repo.html_url}" target="_blank">
-                                <i class="fab fa-github"></i>
-                                View Code
-                            </a>
-                            ${repo.homepage ? `<a href="${repo.homepage}" target="_blank">
-                                <i class="fas fa-external-link-alt"></i>
-                                Live Demo
-                            </a>` : ''}
+                            <a href="${repo.html_url}" target="_blank">View Code</a>
+                            ${repo.homepage ? `<a href="${repo.homepage}" target="_blank">Live Demo</a>` : ''}
                         </div>
-                        ${repo.language ? `<p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">
-                            <i class="fas fa-code"></i> ${repo.language}
-                        </p>` : ''}
+                        ${repo.language ? `<p style="margin-top: 8px; font-style: italic;">Primary Language: ${repo.language}</p>` : ''}
                     `;
 
                     projectsContainer.appendChild(projectCard);
@@ -518,20 +700,24 @@
             }
         }
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('.nav a').forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                if (targetSection) {
-                    targetSection.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-
         // Load projects when page loads
         document.addEventListener('DOMContentLoaded', fetchProjects);
+
+        // Mobile menu toggle function
+        function toggleMobileMenu() {
+            const mobileActions = document.getElementById('mobileActions');
+            mobileActions.classList.toggle('show');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function (event) {
+            const mobileActions = document.getElementById('mobileActions');
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+
+            if (!mobileActions.contains(event.target) && !mobileToggle.contains(event.target)) {
+                mobileActions.classList.remove('show');
+            }
+        });
     </script>
 </body>
 
